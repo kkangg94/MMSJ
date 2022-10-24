@@ -1,55 +1,84 @@
 @font-face {
-  font-family: 'MonoplexKR-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2') format('woff2');
+  font-family: "MonoplexKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'OTWelcomeRA';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+  font-family: "OTWelcomeRA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   margin: 0;
+
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-  
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-html{
+html {
   font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
   box-sizing: border-box;
-  
 }
-body{
-  font: 1.6rem ;
-  font-family: 'OTWelcomeRA';
+body {
+  font: 1.6rem;
+  font-family: "OTWelcomeRA";
   height: 100vh;
   margin: 0;
   /* padding: 0 10vw; */
 }
-.grid-container{
+
+.grid-container {
   display: grid;
-  grid-template-areas: 
-  "header"
-  "main"
-  "footer";
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
 }
-.header{
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+button:hover {
+  border: 0.1rem #404040 solid;
+}
+button.primary {
+  background-color: #f0c040;
+}
+button.block {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+.header {
   grid-area: header;
   background-color: #312b2b;
   height: 10vh;
@@ -59,55 +88,86 @@ body{
   align-items: center;
   padding: 0.5rem;
 }
-.brand a{
+.brand a {
   color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
   text-decoration: none;
 }
-.header-left-links a{
-  color:#ffffff;
+
+.container a {
+  font-size: 2em;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-top: 10vh; */
+}
+
+.row.center {
+  justify-content: center;
+}
+.row.top {
+  align-items: center;
+}
+.col-1 {
+  flex: 1 1 25rem;
+
+  border: 1px solid #000;
+}
+.col-1 ul {
+  position: absolute;
+  border: 1px solid red;
+}
+.col-2 {
+  flex: 2 1 50rem;
+}
+.large {
+  width: 100%;
+}
+.header-left-links a {
+  color: #ffffff;
   text-decoration: none;
   padding: 1rem;
-  font-size:2em;
-
+  font-size: 2em;
 }
-.header-left-links a:hover{
-  color:#ff8000;
+.header-left-links a:hover {
+  color: #ff8000;
 }
-.header-right-links a{
-  color:#ffffff;
+.header-right-links a {
+  color: #ffffff;
   text-decoration: none;
   padding: 1rem;
   font-size: 1.5em;
-
 }
-.header-right-links a:hover{
-  color:#ff8000;
+.header-right-links a:hover {
+  color: #ff8000;
 }
-.main{
+.main {
   grid-area: main;
 }
-.footer{
+.footer {
   grid-area: footer;
   background-color: #312b2b;
-  height:20vh;
+  height: 20vh;
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.footer p{
+.footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-a{
+a {
   text-decoration: none;
 }
-a:hover{
-  color:#ff8000
+a:hover {
+  color: #ff8000;
 }
 /* Home Screen */
 .products {
@@ -124,39 +184,37 @@ a:hover{
   flex: 0 1 34rem;
   margin: 1rem;
   height: 50rem;
-  border-bottom: .1rem #c0c0c0 solid;
+  border-bottom: 0.1rem #c0c0c0 solid;
 }
-.product{
+.product {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  margin:0 5vw;
+  margin: 0 5vw;
 }
-.product-name{
+.product-name {
   font-size: 2rem;
   font-weight: bold;
- 
 }
-.product-name a{
+.product-name a {
   font-size: 2rem;
   font-weight: bold;
-  color:#203040
- 
+  color: #203040;
 }
-.product-brand{
+.product-brand {
   font-size: 1.2rem;
-  color:#808080;
+  color: #808080;
 }
-.product-price{
+.product-price {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.product-image{
+.product-image {
   max-width: 34rem;
   max-height: 34rem;
 }
-.product-rating{
+.product-rating {
   margin-bottom: 1rem;
   font-size: 1.5em;
 }
@@ -164,44 +222,52 @@ a:hover{
 
 .brand button {
   font-size: 3rem;
-  padding: .5rem;
+  padding: 0.5rem;
   background: none;
   border: none;
-  color:#ffffff;
+  color: #ffffff;
   cursor: pointer;
 }
-.sidebar{
+.sidebar {
   position: fixed;
   transform: translateX(-30rem);
   width: 30rem;
   background-color: #f0f0f0;
   height: 100%;
 }
-.sidebar.open{
+.sidebar.open {
   transform: translateX(0);
 }
 
-.sidebar-close-button{
+.sidebar-close-button {
   border-radius: 50%;
-  border: .1rem #000000 solid;
+  border: 0.1rem #000000 solid;
   width: 3rem;
   height: 3rem;
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 2rem;
   padding-top: 0;
   cursor: pointer;
   position: absolute;
-  right: .5rem;
-  top: 1.5rem
+  right: 0.5rem;
+  top: 1.5rem;
 }
 
 /* Rating */
 .product-rating span {
   color: #f0c040;
-  margin:0.2rem;
+  margin: 0.2rem;
 }
 
 .product-rating span:last-child {
-  color : grey;
+  color: grey;
   margin: 0.5vw;
+}
+
+/* Alert */
+.success {
+  color: rgb(38, 255, 0);
+}
+.error {
+  color: rgb(123, 18, 4);
 }
