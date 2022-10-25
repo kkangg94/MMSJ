@@ -88,6 +88,13 @@ ul {
   align-items: center;
   padding: 0.5rem;
 }
+.header-left-links .SubSpan {
+  font-size: 0.5em;
+  position: relative;
+  bottom: 1.3em;
+  font-weight: bold;
+  color: #1566f8;
+}
 .brand a {
   color: #ffffff;
   font-size: 3rem;
@@ -95,8 +102,8 @@ ul {
   text-decoration: none;
 }
 
-.container a {
-  font-size: 2em;
+.backToResult {
+  font-size: 200px;
 }
 
 .row {
@@ -115,8 +122,6 @@ ul {
 }
 .col-1 {
   flex: 1 1 25rem;
-
-  border: 1px solid #000;
 }
 .col-1 ul {
   position: absolute;
@@ -126,7 +131,7 @@ ul {
   flex: 2 1 50rem;
 }
 .large {
-  width: 100%;
+  width: 30vh;
 }
 .header-left-links a {
   color: #ffffff;

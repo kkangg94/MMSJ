@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BoardScreen from "../screens/BoardScreen";
 import Compare from "./Compare";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faUser } from "@fortawesome/free-regular-svg-icons";
 
 export default function Header() {
   return (
@@ -15,7 +17,10 @@ export default function Header() {
           {/* html에서 a 태그가 react에선 link라 생각하면된다 */}
           <Link to="/api/compare">메뉴</Link>
           <Link to="/api/event">소식</Link>
-          <Link to="/api/board">자유게시판</Link>
+          <Link to="/api/board">
+            {" "}
+            커뮤니티<span class="SubSpan">New</span>
+          </Link>
           <Link to="/api/store">스토어</Link>
           <Link to="/api/qna">고객센터</Link>
 
@@ -35,8 +40,12 @@ export default function Header() {
           </Routes>
         </div>
         <div className="header-right-links">
+          <FontAwesomeIcon icon={faBell} size="2x" />
           <a href="cart.html">Cart</a>
+
           <a href="signin.html">Sign In</a>
+
+          <FontAwesomeIcon icon={faUser} size="2x" />
         </div>
       </header>
     </div>

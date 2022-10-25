@@ -12,7 +12,9 @@ export default function ProductScreen(props) {
   }
   return (
     <div className="container">
-      <Link to="/">Back to Result</Link>
+      <Link to="/">
+        <h1>Back to Result</h1>
+      </Link>
       <div className="row top">
         <div className="col-2">
           <img className="large" src={product.image} alt={product.name}></img>

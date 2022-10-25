@@ -10,6 +10,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Slider from "./components/Slider";
 
 function App() {
   return (
@@ -18,10 +19,10 @@ function App() {
       {/* <Map></Map> */}
 
       <Header />
-
+      <Slider />
       <Routes>
         <Route path="/product/:id" element={<ProductScreen />}></Route>
-        <Route path="/" element={<HomeScreen />} exact></Route>
+        <Route path="/api/compare" element={<HomeScreen />} exact></Route>
       </Routes>
 
       {/* <Compare /> */}
