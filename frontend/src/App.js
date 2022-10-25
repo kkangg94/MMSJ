@@ -1,9 +1,11 @@
 import Compare from "./components/Compare";
+import Map from "./components/Map";
 
 function App() {
   return (
     <>
-    <Compare />
+      <Compare />
+      {/* <Map></Map> */}
     </>
   );
 }
