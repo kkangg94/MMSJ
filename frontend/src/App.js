@@ -13,6 +13,8 @@ import Footer from "./components/Footer";
 import Slider from "./components/Slider";
 import MainPage from "./screens/MainPage";
 import BoardScreen from "./screens/BoardScreen";
+import Signup from "./screens/Signup";
+import Login from "./screens/Login";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/api/compare" element={<HomeScreen />} exact></Route>
         <Route path="/" element={<MainPage />} exact></Route>
         <Route path="/api/board" element={<BoardScreen />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
 
       {/* <Compare /> */}
