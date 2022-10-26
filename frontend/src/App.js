@@ -25,7 +25,7 @@ function App() {
       </Routes>
 
       {/* <Compare /> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
