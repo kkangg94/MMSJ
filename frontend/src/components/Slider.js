@@ -9,6 +9,7 @@ import img5 from "../images/vi.jpg";
 
 const Container = styled.div`
   width: 100vw;
+
   // 선을 넘어간 이미지들은 보이지 않도록 처리합니다.
 `;
 const Button = styled.button`
@@ -34,8 +35,9 @@ const ContainerInner = styled.div`
 `;
 
 const FirstTitle = styled.h2`
-  margin-left: 1.2em;
-  color: red;
+  font-size: 3em;
+  color: black;
+  text-align: center;
 `;
 
 const TOTAL_SLIDES = 1;
@@ -47,7 +49,7 @@ export default function Slider() {
       // 더 이상 넘어갈 슬라이드가 없으면 슬라이드를 초기화합니다.
       setCurrentSlide(0);
     } else {
-      setCurrentSlide(currentSlide + 1);
+      setCurrentSlide(currentSlide + 2);
     }
   };
   const prevSlide = () => {
@@ -66,7 +68,6 @@ export default function Slider() {
     <Container>
       <FirstTitle>진행중인 이벤트</FirstTitle>
       <ContainerInner>
-        {currentSlide}
         <SliderContainer ref={slideRef}>
           <Slide img={img1} />
           <Slide img={img2} />

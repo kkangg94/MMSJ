@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Rating from "../components/Rating";
 import data from "../data";
 
@@ -12,6 +14,7 @@ export default function ProductScreen(props) {
   }
   return (
     <div>
+      <Header />
       <Link to="/">Back to Result</Link>
       <div className="row top">
         <div className="col-2">
@@ -62,6 +65,7 @@ export default function ProductScreen(props) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

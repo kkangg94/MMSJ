@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const IMG = styled.img`
   width: 100%;
-  height: 70vh;
+  height: 30vh;
+  margin: 0 20px;
 `;
 
 export default function Slide({ img }) {

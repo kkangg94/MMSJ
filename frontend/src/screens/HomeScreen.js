@@ -1,10 +1,13 @@
 import React from "react";
 import data from "../data";
 import Product from "../components/Product";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function HomeScreen() {
   return (
-    <div>
+    <>
+      <Header />
       {/* <div className="content"> */}
       <ul className="products">
         {data.products.map((product) => (
@@ -13,6 +16,7 @@ export default function HomeScreen() {
       </ul>
       <p>dodo</p>
       {/* </div> */}
-    </div>
+      <Footer />
+    </>
   );
 }

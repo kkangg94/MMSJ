@@ -2,6 +2,8 @@ import React from "react";
 import Rating from "./Rating";
 import data from "../data";
 import { Link } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Product(props) {
   const { product } = props;

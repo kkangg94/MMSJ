@@ -9,6 +9,7 @@ import Footer from "./Footer";
 function Compare() {
   return (
     <>
+      <Header />
       <aside className="sidebar">
         <h3>Shopping Categories</h3>
         <button className="sidebar-close-button">x</button>
@@ -31,6 +32,7 @@ function Compare() {
           </ul> */}
         </div>
       </main>
+      <Footer />
     </>
   );
 }
