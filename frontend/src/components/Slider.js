@@ -30,7 +30,8 @@ const SliderContainer = styled.div`
 `;
 
 const ContainerInner = styled.div`
-  width: 30%;
+  width: 50%;
+  height: 40vh;
   margin: 0 2em;
 `;
 
