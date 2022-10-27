@@ -43,7 +43,8 @@ export default function Header() {
           <FontAwesomeIcon icon={faBell} size="2x" />
           <a href="cart.html">Cart</a>
 
-          <a href="signin.html">Sign In</a>
+          {/* <a href="signin.html">Sign In</a> */}
+          <Link to="login">Signin</Link>
 
           <FontAwesomeIcon icon={faUser} size="2x" />
         </div>
