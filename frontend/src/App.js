@@ -21,7 +21,10 @@ function App() {
       {/* <Map></Map> */}
 
       <Routes>
-        <Route path="/product/:id" element={<ProductScreen />}></Route>
+        <Route
+          path="/api/compare/product/:id"
+          element={<ProductScreen />}
+        ></Route>
         <Route path="/api/compare" element={<HomeScreen />} exact></Route>
         <Route path="/" element={<MainPage />} exact></Route>
         <Route path="/api/board" element={<BoardScreen />}></Route>

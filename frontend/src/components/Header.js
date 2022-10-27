@@ -3,11 +3,15 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BoardScreen from "../screens/BoardScreen";
 import Compare from "./Compare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBell,
+  faUser,
+  faBarChart,
+} from "@fortawesome/free-regular-svg-icons";
 
 export default function Header() {
   return (
-    <div>
+    <div className="out">
       <header className="header">
         <div className="brand">
           <button>&#9776;</button>
@@ -42,9 +46,7 @@ export default function Header() {
         <div className="header-right-links">
           <FontAwesomeIcon icon={faBell} size="2x" />
           <a href="cart.html">Cart</a>
-
           <a href="signin.html">Sign In</a>
-
           <FontAwesomeIcon icon={faUser} size="2x" />
         </div>
       </header>
