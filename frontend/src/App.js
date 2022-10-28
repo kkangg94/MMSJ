@@ -15,6 +15,7 @@ import MainPage from "./screens/MainPage";
 import BoardScreen from "./screens/BoardScreen";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
+import CustomerService from "./screens/CustomerService";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/api/board" element={<BoardScreen />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/api/qna" element={<CustomerService />}></Route>
       </Routes>
 
       {/* <Compare /> */}

@@ -8,34 +8,38 @@ import IndonesiaTitle from "../images/indonesia_title.png";
 
 const Container = styled.div`
   position: relative;
-  background-image: URL(${IndonesiaBG});
+  /* background-image: URL(${IndonesiaBG}); */
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   overflow: hidden;
   height: 400px;
-  a:hover:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: -100px;
-    display: block;
-    background-image: url(${IndonesiaBgLeft});
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 373px;
-    height: 277px;
-    opacity: 0;
-  }
-  a:hover:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: block;
-    background-image: url(${IndonesiaBgRight});
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 563px;
-    height: 305px;
-    opacity: 0;
+  &:hover {
+    &::before {
+      content: "aaa";
+      position: absolute;
+      bottom: 0;
+      left: -100px;
+      display: none;
+      background-image: url(${IndonesiaBgLeft});
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 373px;
+      height: 277px;
+      opacity: 0;
+    }
+
+    &::after {
+      content: "aaa";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+      background-image: url(${IndonesiaBgRight});
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 563px;
+      height: 305px;
+      opacity: 0;
+    }
   }
 `;
 
@@ -48,7 +52,7 @@ const Img1 = styled.img`
 const Img2 = styled.img`
   position: absolute;
   left: -500px;
-  opacity: 0;
+  opacity: 1;
 `;
 
 const ContainerInner = styled.div``;
