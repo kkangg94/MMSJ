@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLogin } from "../hooks/useLogin";
 import {
   BrowserRouter,
   BrowserRouter as Router,
@@ -6,18 +7,21 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [nickname, setNickname] = useState("");
+  const { login, error, isLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+
+    await login(email, password);
   };
   return (
     <>
+      <Header></Header>
       <form className="login" onSubmit={handleSubmit}>
         <h3>Log in</h3>
 
@@ -34,7 +38,8 @@ export default function Login() {
           value={password}
         />
 
-        <button>Log in</button>
+        <button disabled={isLoading}>Log in</button>
+        {error && <div className="error">{error}</div>}
       </form>
       <button>
         <Link to="/signup">회원가입</Link>

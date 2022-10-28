@@ -4,8 +4,15 @@ import BoardScreen from "../screens/BoardScreen";
 import Compare from "./Compare";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-regular-svg-icons";
-
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 export default function Header() {
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+
+  const handleClick = () => {
+    logout();
+  };
   return (
     <div>
       <header className="header">
@@ -18,7 +25,6 @@ export default function Header() {
           <Link to="/api/compare">메뉴</Link>
           <Link to="/api/event">소식</Link>
           <Link to="/api/board">
-            {" "}
             커뮤니티<span class="SubSpan">New</span>
           </Link>
           <Link to="/api/store">스토어</Link>
@@ -40,13 +46,26 @@ export default function Header() {
           </Routes>
         </div>
         <div className="header-right-links">
-          <FontAwesomeIcon icon={faBell} size="2x" />
-          <a href="cart.html">Cart</a>
+          {/* login일때 나타나는 것입니다 */}
+          {user && (
+            <div>
+              <span>{user.nickname}</span>
+              <button onClick={handleClick}>Log out</button>
+              <FontAwesomeIcon icon={faBell} size="2x" />
+              <a href="cart.html">Cart</a>
+            </div>
+          )}
 
+          {/* <Link to='/cart'>Cart</Link> */}
+          {/* login이 아닐때 나타납니다 */}
+          {!user && (
+            <div>
+              <Link to="/login">Signin</Link>
+
+              <FontAwesomeIcon icon={faUser} size="2x" />
+            </div>
+          )}
           {/* <a href="signin.html">Sign In</a> */}
-          <Link to="login">Signin</Link>
-
-          <FontAwesomeIcon icon={faUser} size="2x" />
         </div>
       </header>
     </div>
