@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NewPostImg from "../images/wonddo.png";
+import CoffeeImg from "../images/coffee.jpg";
 
 const Container = styled.div`
   position: relative;
@@ -17,13 +18,14 @@ const Container = styled.div`
 
 const ContainerInner = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   width: 100%;
+  height: 100%;
 `;
 
 const LeftDiv = styled.div`
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 20vh;
 `;
 
@@ -66,7 +68,11 @@ const DetailBtn = styled.button`
 
 const RightDiv = styled.div`
   position: relative;
-  width: 100%; ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  background-image: url(${CoffeeImg});
 `;
 
 const Img = styled.img``;

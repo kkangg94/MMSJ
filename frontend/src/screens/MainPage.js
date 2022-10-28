@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import styled from "styled-components";
 import CompanyIntroduce from "../components/CompanyIntroduce";
+import Comunity from "../components/Comunity";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NewPost from "../components/NewPost";
@@ -14,6 +15,7 @@ function MainPage() {
       <Slider />;
       <CompanyIntroduce />
       <NewPost />
+      <Comunity />
       <Footer />
     </>
   );
