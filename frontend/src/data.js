@@ -9,8 +9,17 @@ const data = {
       countInStock: 0,
       brand: "STARBUCKS",
       rating: 3,
-      numReviews: 10,
+      numReviews: 2,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "2",
@@ -23,6 +32,15 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "3",
@@ -35,6 +53,15 @@ const data = {
       rating: 2,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "4",
@@ -47,6 +74,15 @@ const data = {
       rating: 3,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "5",
@@ -59,6 +95,15 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "6",
@@ -71,6 +116,15 @@ const data = {
       rating: 2,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "7",
@@ -82,6 +136,15 @@ const data = {
       rating: 3,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "8",
@@ -94,6 +157,15 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
     {
       _id: "9",
@@ -106,6 +178,15 @@ const data = {
       rating: 2,
       numReviews: 10,
       description: "high quality product",
+      review: [
+        {
+          rating: 5,
+          content: "최고의 맛입니다!"
+        }, {
+          rating: 4,
+          content: "진짜 맛있어요!"
+        },
+      ]
     },
   ],
 };
