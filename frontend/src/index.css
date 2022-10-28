@@ -70,6 +70,7 @@ button:hover {
 }
 button.primary {
   background-color: #f0c040;
+  /* background-color: #e4134e; */
 }
 button.block {
   width: 100%;
