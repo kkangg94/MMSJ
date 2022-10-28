@@ -78,6 +78,9 @@ button.block {
 ul {
   list-style: none;
 }
+.out {
+  background-color: #312b2b;
+}
 .header {
   grid-area: header;
   background-color: #312b2b;
@@ -86,7 +89,9 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0 30px;
+  max-width: 1300px;
+  margin: auto;
 }
 .header-left-links .SubSpan {
   font-size: 0.5em;
@@ -124,7 +129,6 @@ ul {
   flex: 1 1 25rem;
 }
 .col-1 ul {
-  position: absolute;
   border: 1px solid red;
 }
 .col-2 {
@@ -275,4 +279,10 @@ a:hover {
 }
 .error {
   color: rgb(123, 18, 4);
+}
+
+@media screen and (max-width: 768px) {
+  .header-left-links {
+    display: none;
+  }
 }

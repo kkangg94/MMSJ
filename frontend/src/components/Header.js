@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faUser } from "@fortawesome/free-regular-svg-icons";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+
 export default function Header() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
@@ -14,7 +15,7 @@ export default function Header() {
     logout();
   };
   return (
-    <div>
+    <div className="out">
       <header className="header">
         <div className="brand">
           <button>&#9776;</button>

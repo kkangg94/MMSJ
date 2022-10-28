@@ -1,0 +1,125 @@
+.inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.inner .back {
+  display: block;
+  font-size: 2em;
+  margin: 30px 0 20px 0;
+  color: #312b2b;
+}
+
+.inner .product-img {
+  width: 450px;
+}
+
+.inner .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-top: 10vh; */
+}
+
+.inner .row.center {
+  justify-content: center;
+}
+
+.inner .row.top {
+  align-items: flex-start;
+}
+
+.inner .row .col-1 {
+  flex: 1 1 25rem;
+}
+
+.inner .row .col-1 ul {
+  border: 1px solid red;
+}
+
+.inner .row .col-2 {
+  flex: 2 1 50rem;
+  align-items: flex-start;
+}
+
+.inner .row .col-2 ul>li>h1 {
+  font-size: 3em;
+  margin-top: 0px;
+}
+
+.inner .row .col-2 ul li {
+  margin: 1em 0;
+}
+
+.inner .row .col-2 ul li .review-write-button {
+  display: inline-block;
+  font-size: 1.5em;
+  background-color: #f0c040;
+  color: #312b2b;
+  height: 30px;
+  width: 150px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inner .row .col-2 ul .review-write-area {
+  font-size: 1.3em;
+
+
+}
+
+.inner .row .col-2 ul .review-write-area div {
+  margin: 1em 0;
+}
+
+.inner .row .col-2 ul .review-write-area div:first-child {
+  margin-top: 2em;
+}
+
+.inner .row .col-2 ul .review-write-area div .input-part {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner .row .col-2 ul .review-write-area .review-input {
+  border-radius: 5px;
+  font-size: 1.3em;
+  padding: 0.5em;
+  width: 95%;
+}
+
+.inner .row .col-2 ul .review-show-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner .row .col-2 .font {
+  font-size: 2em;
+}
+
+.inner .card .row {
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  vertical-align: bottom;
+}
+
+.inner .card .row .add-span {
+  height: 30px;
+  line-height: 35px;
+}
+
+.inner .card .row .my-button {
+  background-color: #312b2b;
+  color: white;
+  height: 30px;
+  width: 150px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
