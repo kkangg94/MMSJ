@@ -18,6 +18,7 @@ import BoardScreen from "./screens/BoardScreen";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import Notfound from "./components/Notfound";
+import BoardForm from "./components/BoardForm";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/api/event" element={<EventScreen />}></Route>
         <Route path="/api/event/add" element={<AddEventScreen />}></Route>
         <Route path="/api/board" element={<BoardScreen />}></Route>
+        <Route path="/api/board/create" element={<BoardForm />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="*" element={<Notfound />}></Route>
