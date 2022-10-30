@@ -1,5 +1,7 @@
 import React from "react";
-import CostomerSearch from "../components/CustomerSearch";
+import CustomerBenner from "../components/CustomerBenner";
+import CustomerIdea from "../components/CustomerIdea";
+import CustomerSearch from "../components/CustomerSearch";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -7,7 +9,9 @@ export default function CustomerService() {
   return (
     <>
       <Header />
-      <CostomerSearch />
+      <CustomerBenner />
+      <CustomerSearch />
+      <CustomerIdea />
       <Footer />
     </>
   );
