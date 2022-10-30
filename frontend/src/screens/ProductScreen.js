@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -10,12 +10,43 @@ import "../style/productScreen.css";
 export default function ProductScreen(props) {
   const params = useParams();
   const product = data.products.find((X) => X._id === params.id);
+  let newRating = 0;
+
+  const reviewInput = useRef();
+  const [reviews, setReviews] = useState(product.review);
+  const handleReviewWrite = () => {
+    if (reviewInput.current.value === "") {
+      alert("리뷰 내용을 입력해 주세요");
+    } else {
+      setReviews([
+        ...reviews,
+        { rating: newRating, content: reviewInput.current.value },
+      ]);
+      reviewInput.current.value = "";
+    }
+  };
 
   const [reviewShow, setReviewShow] = useState(false);
+  const handleReviewShow = () => {
+    setReviewShow(!reviewShow);
+  };
 
-  const handleReviewWrite = () => {
-    setReviewShow(true);
-  }
+  const [avg, setAvg] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    reviews.map((el) => {
+      total += el.rating;
+    });
+    setAvg(total / reviews.length);
+  }, [reviews]);
+
+  const drawStar = (e) => {
+    document.querySelector(`.star span`).style.width = `${
+      e.target.value * 10
+    }%`;
+    newRating = e.target.value / 2;
+  };
 
   if (!product) {
     return <div> Product Not Found</div>;
@@ -38,23 +69,25 @@ export default function ProductScreen(props) {
           <div className="col-2">
             <ul>
               <li>
-                <h1 className="product-name">{product.name}</h1>
+                <span className="product-name">{product.name}</span>
+                <span className="SubSpan"> 나만의 음료</span>
               </li>
               <li>
-                <Rating
-                  rating={product.rating}
-                  numReviews={product.numReviews}
-                ></Rating>
-
+                <Rating rating={avg} numReviews={product.numReviews}></Rating>
               </li>
               <li className="review-show-area">
-                {product.review.map((el) => {
-                  return (
-                    <Review rating={el.rating} content={el.content} />
-                  )
+                {reviews.map((el) => {
+                  return <Review rating={el.rating} content={el.content} />;
                 })}
               </li>
-              <li><div className="review-write-button" onClick={handleReviewWrite}>리뷰 쓰기</div></li>
+              <li>
+                <div
+                  className="button review-write-show"
+                  onClick={handleReviewShow}
+                >
+                  리뷰 쓰기
+                </div>
+              </li>
               {reviewShow && (
                 <li className="review-write-area">
                   <div>
@@ -62,23 +95,41 @@ export default function ProductScreen(props) {
                   </div>
                   <div>
                     <span>별점&nbsp;&nbsp;</span>
-                    <span>
-                      <i className="fa fa-star-o"></i>
-                      <i className="fa fa-star-o"></i>
-                      <i className="fa fa-star-o"></i>
-                      <i className="fa fa-star-o"></i>
-                      <i className="fa fa-star-o"></i>
+                    <span class="star">
+                      ★★★★★
+                      <span>★★★★★</span>
+                      <input
+                        type="range"
+                        onInput={(e) => drawStar(e)}
+                        value="0"
+                        step="1"
+                        min="0"
+                        max="10"
+                      />
                     </span>
                   </div>
                   <div className="input-part">
                     <span>리뷰 내용 작성</span>
-                    <input type='text' className="review-input" />
-                    <div>
+                    <input
+                      type="text"
+                      className="review-input"
+                      ref={reviewInput}
+                    />
+                    <div
+                      className="button review-write"
+                      onClick={handleReviewWrite}
+                    >
+                      리뷰 작성
+                    </div>
+                    <div
+                      className="button review-write-close"
+                      onClick={handleReviewShow}
+                    >
+                      닫기 &nbsp;<i class="fa-solid fa-x"></i>
                     </div>
                   </div>
-
-                </li>)
-              }
+                </li>
+              )}
               <hr />
               <li className="font">판매 가격 : {product.price}원</li>
               <li className="font">상세 설명 : {product.description}</li>
