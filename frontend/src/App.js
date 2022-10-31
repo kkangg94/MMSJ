@@ -19,6 +19,7 @@ import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import Notfound from "./components/Notfound";
 import BoardForm from "./components/BoardForm";
+import CustomerService from "./screens/CustomerService";
 
 function App() {
   return (
@@ -41,9 +42,11 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="*" element={<Notfound />}></Route>
+        <Route path="/api/qna" element={<CustomerService />}></Route>
       </Routes>
 
       {/* <Compare /> */}
+      {/* <Footer /> */}
     </>
   );
 }

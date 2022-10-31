@@ -2,30 +2,36 @@ import React from "react";
 import styled from "styled-components";
 import NewPostImg from "../images/wonddo.png";
 import CoffeeImg from "../images/coffee.jpg";
+import SearchBar from "./SearchBar";
+import RangeSlider from "./RangeSlider";
 
 const Container = styled.div`
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-attachment: fixed;
   overflow: hidden;
-  height: 100vh;
+  height: 57vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${NewPostImg});
 `;
 
 const ContainerInner = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
+  width: 80%;
+  height: 50vh;
+  margin: 3em 14em;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  border-radius: 3em;
 `;
+
+const InnerTop = styled.div``;
+
+const InnerBottom = styled.div``;
 
 const LeftDiv = styled.div`
   position: relative;
-  width: 50%;
+  width: 100%;
   height: 20vh;
 `;
 
@@ -35,25 +41,25 @@ const TitleOne = styled.div`
   position: absolute;
   font-size: 5em;
   font-weight: bold;
-  top: 60vh;
-  left: 2em;
+  margin-top: 5em;
+  margin-left: 3em;
   color: #f4a460;
 `;
 
 const TitleTwo = styled.div`
   position: absolute;
-  font-size: 4em;
-  top: 70vh;
-  left: 2.5em;
-  color: #f4a460;
+  font-size: 2em;
+  top: 12vh;
+  left: 16em;
+  color: #666666;
 `;
 
 const TitleThree = styled.div`
   position: absolute;
-  font-size: 2em;
-  top: 78vh;
-  left: 5.2em;
-  color: #f4a460;
+  font-size: 2.5em;
+  top: 7vh;
+  left: 15em;
+  color: #000009;
 `;
 
 const DetailBtn = styled.button`
@@ -70,25 +76,35 @@ const RightDiv = styled.div`
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 50%;
   height: 100%;
-  background-image: url(${CoffeeImg});
+  width: 100%;
 `;
+
+const InnerLeft = styled.div``;
+
+const InnerRight = styled.div``;
 
 const Img = styled.img``;
 
-export default function NewPost() {
+export default function CustomerSearch() {
   return (
     <>
       <Container>
         <ContainerInner>
-          <LeftDiv>
-            <TitleOne>꽁뜨 뒤 쥬흐</TitleOne>
-            <TitleTwo>Conte Du Jour CAFFE</TitleTwo>
-            <TitleThree>오늘의 이야기, 일상의 커피를 즐겨보세요</TitleThree>
-            <DetailBtn>자세히 보기</DetailBtn>
-          </LeftDiv>
-          <RightDiv>{/* <Img src={}></Img> */}</RightDiv>
+          <InnerTop>
+            <LeftDiv>
+              <TitleOne></TitleOne>
+              <TitleTwo>검색창에 원하는 정보를 키워도로 입력해보세요.</TitleTwo>
+              <TitleThree>궁금하신 점을 검색해보세요!</TitleThree>
+              <SearchBar />
+              <DetailBtn>자세히 보기</DetailBtn>
+            </LeftDiv>
+            <RightDiv>
+              <InnerLeft></InnerLeft>
+              <InnerRight></InnerRight>
+            </RightDiv>
+          </InnerTop>
+          <InnerBottom></InnerBottom>
         </ContainerInner>
       </Container>
     </>

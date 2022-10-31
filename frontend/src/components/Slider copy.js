@@ -26,6 +26,14 @@ const SliderContainer = styled.div`
   display: flex; //이미지들을 가로로 나열합니다.
 `;
 
+// 캐러셀 화면크기 별로 몇개 띄울건지 정할 수 있음
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
+];
+
 const TOTAL_SLIDES = 2;
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,7 +61,7 @@ export default function Slider() {
   return (
     <Container>
       {currentSlide}
-      <SliderContainer ref={slideRef}>
+      <SliderContainer ref={slideRef} breakPoints={breakPoints}>
         <Slide img={img1} />
         <Slide img={img2} />
         <Slide img={img3} />

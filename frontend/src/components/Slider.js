@@ -8,22 +8,42 @@ import img4 from "../images/rabbit.jpg";
 import img5 from "../images/vi.jpg";
 
 const Container = styled.div`
+  position: relative;
   width: 100vw;
+  margin-bottom: 3em;
 
   // 선을 넘어간 이미지들은 보이지 않도록 처리합니다.
 `;
-const Button = styled.button`
+const Button1 = styled.button`
   /* all: unset; */
+  position: absolute;
   border: 1px solid grey;
   padding: 0.5em 2em;
   color: grey;
   border-radius: 10px;
+  top: 9em;
   &:hover {
     transition: all 0.3s ease-in-out;
     background-color: coral;
     color: #fff;
   }
 `;
+const Button2 = styled.button`
+  /* all: unset; */
+  position: absolute;
+  border: 1px solid grey;
+  padding: 0.5em 2em;
+  color: grey;
+  border-radius: 10px;
+  top: 9em;
+  right: 2em;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: coral;
+    color: #fff;
+  }
+`;
+
 const SliderContainer = styled.div`
   width: 100%;
   display: flex; //이미지들을 가로로 나열합니다.
@@ -67,17 +87,17 @@ export default function Slider() {
   }, [currentSlide]);
   return (
     <Container>
-      <FirstTitle>진행중인 이벤트</FirstTitle>
+      <FirstTitle></FirstTitle>
       <ContainerInner>
         <SliderContainer ref={slideRef}>
-          <Slide img={img1} />
+          <Slide img={img3} />
           <Slide img={img2} />
           <Slide img={img3} />
           <Slide img={img4} />
           <Slide img={img5} />
         </SliderContainer>
-        <Button onClick={prevSlide}>Previous Slide</Button>
-        <Button onClick={nextSlide}>Next Slide</Button>
+        <Button1 onClick={prevSlide}>Prev</Button1>
+        <Button2 onClick={nextSlide}>Next</Button2>
       </ContainerInner>
     </Container>
   );
