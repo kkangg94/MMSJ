@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
+import styled from "styled-components";
 import {
   BrowserRouter,
   BrowserRouter as Router,
@@ -8,6 +9,76 @@ import {
   Link,
 } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+// const Body = styled.div`
+//   width: 100vh;
+// `;
+const Title = styled.h1`
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  color: #ff8000;
+  font-size: 5em;
+  margin-top: 3em;
+`;
+
+const Container = styled.div`
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  /* border: 1px solid red; */
+  border-radius: 3px;
+  /* background-color: #ff8000; */
+  display: flex;
+
+  align-items: center;
+  left: 25%;
+
+  flex-direction: column;
+`;
+
+const Form = styled.form`
+  width: 70%;
+  /* border: 1px solid yellow; */
+
+  /* border: 1px solid black; */
+  margin-bottom: 3em;
+`;
+const Label = styled.label`
+  font-size: 3em;
+  color: #ff8000;
+`;
+
+const Section = styled.div`
+  /* width: 50%; */
+  display: flex;
+  margin-top: 2em;
+`;
+
+const Input = styled.input`
+  width: 450px;
+  border: 1px solid #ff8000;
+  margin-left: 1em;
+  border-radius: 3px;
+`;
+
+const Button = styled.button`
+  border: 1px solid #000;
+  position: relative;
+  border: none;
+  display: inline-block;
+  width: 410px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  background-color: #ff8000;
+  text-decoration: none;
+  transition: 0.25s;
+  margin-bottom: 1em;
+  color: white;
+`;
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -22,28 +93,35 @@ export default function Login() {
   return (
     <>
       <Header></Header>
-      <form className="login" onSubmit={handleSubmit}>
-        <h3>Log in</h3>
+      <Title>Login</Title>
+      <Container>
+        <Form className="login" onSubmit={handleSubmit}>
+          <Section>
+            <Label>Email:</Label>
+            <Input
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </Section>
+          <Section>
+            <Label>Password:</Label>
+            <Input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </Section>
 
-        <label>Email:</label>
-        <input
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
+          {error && <div className="error">{error}</div>}
+        </Form>
+        <Button disabled={isLoading}>Log in</Button>
 
-        <button disabled={isLoading}>Log in</button>
-        {error && <div className="error">{error}</div>}
-      </form>
-      <button>
-        <Link to="/signup">회원가입</Link>
-      </button>
+        <Link to="/signup">
+          <Button>Sign up</Button>
+        </Link>
+      </Container>
+      <Footer></Footer>
     </>
   );
 }
