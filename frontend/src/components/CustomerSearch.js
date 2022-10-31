@@ -4,6 +4,10 @@ import NewPostImg from "../images/wonddo.png";
 import CoffeeImg from "../images/coffee.jpg";
 import SearchBar from "./SearchBar";
 import RangeSlider from "./RangeSlider";
+import HorizonLine from "./HorizonLine";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+import { deepOrange, deepPurple } from "@mui/material/colors";
 
 const Container = styled.div`
   position: relative;
@@ -31,35 +35,45 @@ const InnerBottom = styled.div``;
 
 const LeftDiv = styled.div`
   position: relative;
-  width: 100%;
+  align-items: center;
+  width: 80%;
+  margin: 0 3em;
   height: 20vh;
 `;
 
 const Title = styled.div``;
 
 const TitleOne = styled.div`
-  position: absolute;
   font-size: 5em;
   font-weight: bold;
-  margin-top: 5em;
-  margin-left: 3em;
-  color: #f4a460;
+  margin-top: 2em;
+  margin-left: 1em;
+  color: #161934;
 `;
 
 const TitleTwo = styled.div`
-  position: absolute;
-  font-size: 2em;
-  top: 12vh;
-  left: 16em;
+  font-size: 2.5em;
+  margin-left: 2em;
+  margin-top: 1em;
   color: #666666;
 `;
 
 const TitleThree = styled.div`
-  position: absolute;
   font-size: 2.5em;
-  top: 7vh;
-  left: 15em;
-  color: #000009;
+  margin-left: 2em;
+  margin-top: 0.3em;
+  color: #666666;
+`;
+
+const Question = styled.span`
+  font-size: 2em;
+  line-height: 2em;
+`;
+
+const Answer = styled.span`
+  font-size: 2em;
+  /* line-height: 2em; */
+  color: grey;
 `;
 
 const DetailBtn = styled.button`
@@ -80,7 +94,10 @@ const RightDiv = styled.div`
   width: 100%;
 `;
 
-const InnerLeft = styled.div``;
+const InnerLeft = styled.div`
+  width: 80%;
+  margin: 0 3em;
+`;
 
 const InnerRight = styled.div``;
 
@@ -93,14 +110,32 @@ export default function CustomerSearch() {
         <ContainerInner>
           <InnerTop>
             <LeftDiv>
-              <TitleOne></TitleOne>
-              <TitleTwo>검색창에 원하는 정보를 키워도로 입력해보세요.</TitleTwo>
+              <TitleOne>FAQ</TitleOne>
+              <TitleTwo>자주하는 질문</TitleTwo>
               <TitleThree>궁금하신 점을 검색해보세요!</TitleThree>
-              <SearchBar />
+              <HorizonLine />
               <DetailBtn>자세히 보기</DetailBtn>
             </LeftDiv>
             <RightDiv>
-              <InnerLeft></InnerLeft>
+              <InnerLeft>
+                <Stack direction="row" spacing={2}>
+                  <Avatar sx={{ marginLeft: "3em" }}>Q</Avatar>
+                  <Question>[사용] 홈페이지 주소는 무엇인가요?</Question>
+                  <Avatar
+                    sx={{
+                      bgcolor: deepOrange[500],
+                      marginLeft: "3em",
+                      marginTop: "1em",
+                    }}
+                  >
+                    A
+                  </Avatar>
+                  <Answer>
+                    PC 접속 시 : https://www.hollys.co.kr <br />
+                    모바일 접속 시 : https://m.hollys.co.kr
+                  </Answer>
+                </Stack>
+              </InnerLeft>
               <InnerRight></InnerRight>
             </RightDiv>
           </InnerTop>

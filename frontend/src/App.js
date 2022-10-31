@@ -1,4 +1,4 @@
-import Compare from "./components/Compare";
+import Compare from "./screens/CompareScrenn";
 import Map from "./components/Map";
 import {
   BrowserRouter,
@@ -16,6 +16,8 @@ import BoardScreen from "./screens/BoardScreen";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import CustomerService from "./screens/CustomerService";
+import Item from "./screens/StoreScreen";
+import EventScreen from "./screens/EventScreen";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/api/qna" element={<CustomerService />}></Route>
+        <Route path="/api/store" element={<Item />}></Route>
+        <Route path="/api/event" element={<EventScreen />}></Route>
       </Routes>
 
       {/* <Compare /> */}

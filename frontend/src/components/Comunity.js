@@ -1,17 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import IndonesiaBG from "../images/indonesia_bg.jpg";
 import IndonesiaBgLeft from "../images/indonesia_bg_left.png";
 import IndonesiaBgRight from "../images/indonesia_bg_right.png";
 import IndonesiaImg from "../images/indonesia_img.png";
 import IndonesiaTitle from "../images/indonesia_title.png";
+import CoffeeshopImg from "../images/coffeeshopsm.jpg";
+import CoffeeCup from "../images/coffeecup.png";
+import TextureImg from "../images/texture.jpg";
 
 const Container = styled.div`
   position: relative;
-  /* background-image: URL(${IndonesiaBG}); */
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-image: URL(${TextureImg});
+  background-color: grey;
+  /* background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */
   overflow: hidden;
-  height: 400px;
+  height: 50vh;
+  background-blend-mode: soft-light, screen;
+  background-repeat: no-repeat;
+  background-size: cover;
   &:hover {
     &::before {
       content: "aaa";
@@ -43,15 +50,38 @@ const Container = styled.div`
   }
 `;
 
-const Img1 = styled.img`
-  position: absolute;
-  width: 496px;
-  top: 120px;
+const ImgContent = styled.div`
+  color: white;
+  font-size: 10em;
+  margin-left: 7em;
+  margin-top: 1.5em;
 `;
+
+const Content = styled.div`
+  color: white;
+  font-size: 3em;
+  margin-left: 25em;
+  margin-top: 0.3em;
+`;
+
+// const Img1 = styled.img`
+//   position: absolute;
+//   width: 496px;
+//   top: 120px;
+// `;
 
 const Img2 = styled.img`
   position: absolute;
-  left: -500px;
+  left: 17em;
+  top: 10em;
+  opacity: 1;
+  width: 20vw;
+`;
+
+const Btn = styled.button`
+  position: absolute;
+  left: 58em;
+  top: 22em;
   opacity: 1;
 `;
 
@@ -62,11 +92,14 @@ export default function Comunity() {
     <>
       <Container>
         <ContainerInner>
-          <Img1 src={IndonesiaTitle}></Img1>
-          <Img2 src={IndonesiaImg}></Img2>
+          {/* <Img1 src={IndonesiaTitle}></Img1> */}
+          <ImgContent>Community</ImgContent>
+          <Content>다른사람들의 최애메뉴가 궁금하다면?</Content>
+          <Img2 src={CoffeeCup}></Img2>
           {/* <a href="#" class="btn btn--gold">
             자세히 보기
           </a> */}
+          <Btn>소통하러 가기</Btn>
         </ContainerInner>
       </Container>
     </>
