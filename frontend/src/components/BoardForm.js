@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useBoardsContext } from "../hooks/useBoardsContext";
 
 export default function BoardForm() {
   //   const [seq, setSeq] = useState("");
+  const { dispatch } = useBoardsContext();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [error, setError] = useState(null);
+  const [emptyFields, setEmptyFields] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,13 +25,16 @@ export default function BoardForm() {
 
     if (!response.ok) {
       setError(json.error);
+      setEmptyFields(json.emptyFields);
     }
 
     if (response.ok) {
       setTitle("");
       setContent("");
       setError(null);
+      setEmptyFields([]);
       console.log("new board added", json);
+      dispatch({ type: "CREATE_BOARD", payload: json });
     }
   };
   return (
@@ -41,6 +47,7 @@ export default function BoardForm() {
           type="text"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
+          className={emptyFields.includes("title") ? "error" : ""}
         />
         <label>내용</label>
         <input

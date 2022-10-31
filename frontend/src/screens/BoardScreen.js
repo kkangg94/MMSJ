@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BoardRep from "../components/BoardRep";
 import BoardForm from "../components/BoardForm";
+import { useBoardsContext } from "../hooks/useBoardsContext";
 
 const Title = styled.h1`
   text-align: center;
@@ -30,8 +31,8 @@ const Boardtable = styled.table`
 `;
 
 export default function BoardScreen() {
-  const [boards, setBoards] = useState(null);
-  const [write, setWrite] = useState(false);
+  const { boards, dispatch } = useBoardsContext();
+  // const [write, setWrite] = useState(false);
   // Fetching Data
   useEffect(() => {
     // api from backend
@@ -40,11 +41,11 @@ export default function BoardScreen() {
       const json = await response.json();
 
       if (response.ok) {
-        setBoards(json);
+        dispatch({ type: "SET_BOARDS", payload: json });
       }
     };
     fetchBoards();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

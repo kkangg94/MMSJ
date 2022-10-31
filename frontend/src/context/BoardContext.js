@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 
-export const BoardContext = createContext();
+export const BoardsContext = createContext();
 
 export const boardsReducer = (state, action) => {
   switch (action.type) {
@@ -8,13 +8,13 @@ export const boardsReducer = (state, action) => {
       return {
         boards: action.payload,
       };
-    case "CREATE_BOARDS":
+    case "CREATE_BOARD":
       return {
         boards: [action.payload, ...state.boards],
       };
-    case "DELETE_BOARDS":
+    case "DELETE_BOARD":
       return {
-        boards: state.boards.filter((w) => w._id !== action.payload._id),
+        boards: state.boards.filter((b) => b._id !== action.payload._id),
       };
     default:
       return state;
@@ -23,14 +23,12 @@ export const boardsReducer = (state, action) => {
 
 export const BoardContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(boardsReducer, {
-    user: null,
+    boards: null,
   });
 
-  console.log(state);
-
   return (
-    <BoardContext.Provider value={{ ...state, dispatch }}>
+    <BoardsContext.Provider value={{ ...state, dispatch }}>
       {children}
-    </BoardContext.Provider>
+    </BoardsContext.Provider>
   );
 };
