@@ -2,10 +2,20 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BoardScreen from "../screens/BoardScreen";
 import Compare from "./Compare";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faUser } from "@fortawesome/free-regular-svg-icons";
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export default function Header() {
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+
+  const handleClick = () => {
+    logout();
+  };
   return (
-    <div>
+    <div className="out">
       <header className="header">
         <div className="brand">
           <button>&#9776;</button>
@@ -15,7 +25,9 @@ export default function Header() {
           {/* html에서 a 태그가 react에선 link라 생각하면된다 */}
           <Link to="/api/compare">메뉴</Link>
           <Link to="/api/event">소식</Link>
-          <Link to="/api/board">자유게시판</Link>
+          <Link to="/api/board">
+            커뮤니티<span class="SubSpan">New</span>
+          </Link>
           <Link to="/api/store">스토어</Link>
           <Link to="/api/qna">고객센터</Link>
 
@@ -35,8 +47,26 @@ export default function Header() {
           </Routes>
         </div>
         <div className="header-right-links">
-          <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign In</a>
+          {/* login일때 나타나는 것입니다 */}
+          {user && (
+            <div>
+              <span>{user.nickname}</span>
+              <button onClick={handleClick}>Log out</button>
+              <FontAwesomeIcon icon={faBell} size="2x" />
+              <a href="cart.html">Cart</a>
+            </div>
+          )}
+
+          {/* <Link to='/cart'>Cart</Link> */}
+          {/* login이 아닐때 나타납니다 */}
+          {!user && (
+            <div>
+              <Link to="/login">Signin</Link>
+
+              <FontAwesomeIcon icon={faUser} size="2x" />
+            </div>
+          )}
+          {/* <a href="signin.html">Sign In</a> */}
         </div>
       </header>
     </div>

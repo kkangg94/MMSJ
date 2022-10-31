@@ -10,6 +10,12 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Slider from "./components/Slider";
+import MainPage from "./screens/MainPage";
+import BoardScreen from "./screens/BoardScreen";
+import Signup from "./screens/Signup";
+import Login from "./screens/Login";
+import CustomerService from "./screens/CustomerService";
 
 function App() {
   return (
@@ -17,11 +23,17 @@ function App() {
       {/* <Compare /> */}
       {/* <Map></Map> */}
 
-      <Header />
-
       <Routes>
-        <Route path="/product/:id" element={<ProductScreen />}></Route>
-        <Route path="/" element={<HomeScreen />} exact></Route>
+        <Route
+          path="/api/compare/product/:id"
+          element={<ProductScreen />}
+        ></Route>
+        <Route path="/api/compare" element={<HomeScreen />} exact></Route>
+        <Route path="/" element={<MainPage />} exact></Route>
+        <Route path="/api/board" element={<BoardScreen />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/api/qna" element={<CustomerService />}></Route>
       </Routes>
 
       {/* <Compare /> */}
