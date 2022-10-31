@@ -8,6 +8,8 @@ import IndonesiaTitle from "../images/indonesia_title.png";
 import CoffeeshopImg from "../images/coffeeshopsm.jpg";
 import CoffeeCup from "../images/coffeecup.png";
 import TextureImg from "../images/texture.jpg";
+import { Link } from "react-router-dom";
+import BoardScreen from "../screens/BoardScreen";
 
 const Container = styled.div`
   position: relative;
@@ -99,7 +101,10 @@ export default function Comunity() {
           {/* <a href="#" class="btn btn--gold">
             자세히 보기
           </a> */}
-          <Btn>소통하러 가기</Btn>
+          <Btn>
+            <Link to="/api/board" />
+            소통하러 가기
+          </Btn>
         </ContainerInner>
       </Container>
     </>
