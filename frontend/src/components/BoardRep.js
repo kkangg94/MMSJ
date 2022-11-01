@@ -27,7 +27,9 @@ export default function BoardRep({ board }) {
         <td className="title">{board.title}</td>
         <td className="content">{board.content}</td>
         <td className="writtentime">
-          {formatRelative(subDays(new Date(), 3), new Date(board.createdAt))}
+          {/* {board.writtenTime} */}
+          {console.log(board)} 
+          {formatRelative(subDays(new Date(board.writtenTime), 3), new Date())}
         </td>
         <td className="like">{board.like}</td>
         <td className="view">{board.view}</td>

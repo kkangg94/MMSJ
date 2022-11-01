@@ -5,7 +5,9 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
+  Navigate,
 } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import EventScreen from "./screens/EventScreen";
@@ -22,6 +24,7 @@ import BoardForm from "./components/BoardForm";
 import CustomerService from "./screens/CustomerService";
 
 function App() {
+  const { user } = useAuthContext();
   return (
     <>
       {/* <Compare /> */}
@@ -39,12 +42,15 @@ function App() {
         <Route path="/api/event/add" element={<AddEventScreen />}></Route>
         <Route path="/api/board" element={<BoardScreen />}></Route>
         <Route path="/api/board/create" element={<BoardForm />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/"></Navigate> : <Login />}
+        ></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="*" element={<Notfound />}></Route>
-        <Route path="/api/qna" element={<CustomerService />}></Route>
-      </Routes>
 
+        <Route path="/api/qna" element={<CustomerService />}></Route>
+        <Route path="*" element={<Notfound />}></Route>
+      </Routes>
       {/* <Compare /> */}
       {/* <Footer /> */}
     </>

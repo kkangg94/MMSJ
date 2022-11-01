@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import BoardRep from "../components/BoardRep";
 import BoardForm from "../components/BoardForm";
 import { useBoardsContext } from "../hooks/useBoardsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Title = styled.h1`
   text-align: center;
@@ -32,6 +33,7 @@ const Boardtable = styled.table`
 
 export default function BoardScreen() {
   const { boards, dispatch } = useBoardsContext();
+  // const { user} = useAuthContext()
   // const [write, setWrite] = useState(false);
   // Fetching Data
   useEffect(() => {
@@ -44,6 +46,9 @@ export default function BoardScreen() {
         dispatch({ type: "SET_BOARDS", payload: json });
       }
     };
+    // if(user){
+    //fetchBoards();
+    // }
     fetchBoards();
   }, [dispatch]);
 

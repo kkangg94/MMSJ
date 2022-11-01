@@ -331,7 +331,7 @@ a:hover {
 
 input.error {
   border: 1px solid red;
-
+}
 @media screen and (max-width: 768px) {
   .header-left-links {
     display: none;

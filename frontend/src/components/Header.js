@@ -50,7 +50,7 @@ export default function Header() {
           {/* login일때 나타나는 것입니다 */}
           {user && (
             <div>
-              <span>{user.nickname}</span>
+              <span>{user.email}</span>
               <button onClick={handleClick}>Log out</button>
               <FontAwesomeIcon icon={faBell} size="2x" />
               <a href="cart.html">Cart</a>
@@ -63,7 +63,7 @@ export default function Header() {
             <div>
               <Link to="/login">Signin</Link>
 
-              <FontAwesomeIcon icon={faUser} size="2x" />
+              {/* <FontAwesomeIcon icon={faUser} size="2x" /> */}
             </div>
           )}
           {/* <a href="signin.html">Sign In</a> */}
