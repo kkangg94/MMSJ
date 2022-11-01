@@ -51,7 +51,8 @@ export default function Header() {
               <a href="board.html">자유게시판</a>
               <a href="help.html">고객센터</a> */}
             {/* 라우팅한것 */}
-            {/* <Route path="/" element={<MainScreen/>} */}
+
+            {/* <Route path="/" element={<MainScreen />} /> */}
             {/* <Route path="/api/compare" element={<CompareScreen />} /> */}
             {/* <Route path="/api/event" element={<EventScreen />} /> */}
             <Route path="/api/board" element={<BoardScreen />} />

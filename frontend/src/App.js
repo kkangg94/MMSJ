@@ -23,6 +23,7 @@ import Notfound from "./components/Notfound";
 import BoardForm from "./components/BoardForm";
 import CustomerService from "./screens/CustomerService";
 import Item from "./screens/StoreScreen";
+import Practice from "./components/Practice";
 
 function App() {
   const { user } = useAuthContext();
@@ -39,7 +40,8 @@ function App() {
         ></Route>
         <Route path="/" element={<MainPage />} exact></Route>
         <Route path="/api/compare" element={<HomeScreen />} exact></Route>
-        <Route path="/api/event" element={<EventScreen />}></Route>
+        {/* <Route path="/api/event" element={<EventScreen />}></Route> */}
+        <Route path="/api/event" element={<Practice />}></Route>
         <Route path="/api/event/add" element={<AddEventScreen />}></Route>
         <Route path="/api/board" element={<BoardScreen />}></Route>
         <Route path="/api/board/create" element={<BoardForm />}></Route>
@@ -48,14 +50,9 @@ function App() {
           element={user ? <Navigate to="/"></Navigate> : <Login />}
         ></Route>
         <Route path="/signup" element={<Signup />}></Route>
-<<<<<<< HEAD
-=======
-        <Route path="*" element={<Notfound />}></Route>
-        <Route path="/api/qna" element={<CustomerService />}></Route>
+
         <Route path="/api/store" element={<Item />}></Route>
-        <Route path="/api/event" element={<EventScreen />}></Route>
-      </Routes>
->>>>>>> c2320aa24482ce48b3ff9623ff7993d57d7c7b82
+        {/* <Route path="/api/event" element={<EventScreen />}></Route> */}
 
         <Route path="/api/qna" element={<CustomerService />}></Route>
         <Route path="*" element={<Notfound />}></Route>
