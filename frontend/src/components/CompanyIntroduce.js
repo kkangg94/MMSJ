@@ -76,7 +76,7 @@ const TitleOne = styled.div`
   position: absolute;
   font-size: 5em;
   margin-top: 1em;
-  margin-left: 2em;
+  margin-left: 2.8em;
 
   font-weight: bold;
   /* transform: translate(-700px);
@@ -87,7 +87,7 @@ const TitleTwo = styled.div`
   position: absolute;
   font-size: 4em;
   margin-top: 3em;
-  margin-left: 2.5em;
+  margin-left: 3.5em;
   /* transform: translate(-700px); */
 `;
 
@@ -105,7 +105,7 @@ const TitleThree = styled.div`
   position: absolute;
   font-size: 2em;
   margin-top: 11em;
-  margin-left: 5em;
+  margin-left: 7em;
 
   /* right: -120px; */
 `;
@@ -121,7 +121,7 @@ const DetailBtn = styled.button`
   color: #404040;
   font-weight: bold;
   width: 10vw;
-  margin-top: 19em;
+  margin-top: 22em;
   margin-left: 20.3em;
 `;
 
@@ -129,6 +129,7 @@ const RightDiv = styled.div`
   position: relative;
   /* border: 1px solid #000; */
   width: 50%;
+  /* background-image: url(${IntroImg}); */
 `;
 
 const Img = styled.img`

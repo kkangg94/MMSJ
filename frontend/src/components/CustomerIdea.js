@@ -34,12 +34,11 @@ const LeftDiv = styled.div`
 
 const Content = styled.div`
   color: grey;
-  top: 3em;
+  margin-top: 3em;
   font-size: 3em;
 `;
 
 const TitleOne = styled.div`
-  position: absolute;
   font-size: 3em;
   font-weight: bold;
   top: 5vh;
@@ -48,7 +47,6 @@ const TitleOne = styled.div`
 `;
 
 const TitleTwo = styled.div`
-  position: absolute;
   font-size: 2em;
   margin-left: 3em;
   margin-top: 5em;
@@ -56,7 +54,6 @@ const TitleTwo = styled.div`
 `;
 
 const TitleThree = styled.div`
-  position: absolute;
   font-size: 2.5em;
 
   left: 15em;
@@ -68,6 +65,7 @@ const Ol = styled.ol``;
 const Li = styled.li`
   font-size: 0.5em;
   margin-left: 3em;
+  background-color: red;
 `;
 
 const DetailBtn = styled.button`

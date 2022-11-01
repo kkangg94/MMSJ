@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import NewPostImg from "../images/wonddo.png";
-import CoffeeImg from "../images/coffee.jpg";
+import CoffeeImg from "../images/tumblr.png";
+import CoffeeBean from "../images/coffeebean.jpg";
 
 const Container = styled.div`
   position: relative;
@@ -14,6 +15,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${NewPostImg});
+  background-color: grey;
 `;
 
 const ContainerInner = styled.div`
@@ -69,7 +71,7 @@ const DetailBtn = styled.button`
 const RightDiv = styled.div`
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   width: 50%;
   height: 100%;
   background-image: url(${CoffeeImg});

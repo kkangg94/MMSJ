@@ -1,4 +1,4 @@
-import Compare from "./components/Compare";
+import Compare from "./screens/CompareScrenn";
 import Map from "./components/Map";
 import {
   BrowserRouter,
@@ -22,6 +22,7 @@ import Login from "./screens/Login";
 import Notfound from "./components/Notfound";
 import BoardForm from "./components/BoardForm";
 import CustomerService from "./screens/CustomerService";
+import Item from "./screens/StoreScreen";
 
 function App() {
   const { user } = useAuthContext();
@@ -47,6 +48,14 @@ function App() {
           element={user ? <Navigate to="/"></Navigate> : <Login />}
         ></Route>
         <Route path="/signup" element={<Signup />}></Route>
+<<<<<<< HEAD
+=======
+        <Route path="*" element={<Notfound />}></Route>
+        <Route path="/api/qna" element={<CustomerService />}></Route>
+        <Route path="/api/store" element={<Item />}></Route>
+        <Route path="/api/event" element={<EventScreen />}></Route>
+      </Routes>
+>>>>>>> c2320aa24482ce48b3ff9623ff7993d57d7c7b82
 
         <Route path="/api/qna" element={<CustomerService />}></Route>
         <Route path="*" element={<Notfound />}></Route>

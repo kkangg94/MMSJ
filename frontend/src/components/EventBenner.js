@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import IMG from "../images/service.jpg";
-import IMG2 from "../images/treetexture.png";
+import IMG from "../images/memo.jpg";
 
 const Container = styled.div`
   position: relative;
@@ -22,7 +21,6 @@ const ContainerInner = styled.div`
   flex-direction: column;
   margin: 3em 14em;
   /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
-
   border-radius: 3em;
 `;
 
@@ -40,13 +38,13 @@ const Content = styled.div`
   font-weight: bold;
 `;
 
-export default function CustomerBenner() {
+export default function EventrBenner() {
   return (
     <>
       <Container>
         <ContainerInner>
           <Div>
-            <Content>Customer Service & Idea</Content>
+            <Content>Event</Content>
           </Div>
         </ContainerInner>
       </Container>

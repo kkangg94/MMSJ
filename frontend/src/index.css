@@ -80,13 +80,13 @@ ul {
   list-style: none;
 }
 .out {
-  background-color: #312b2b;
+  background-color: #ffffff;
 }
 .header {
   grid-area: header;
-  background-color: #312b2b;
+  background-color: #ffffff;
   height: 10vh;
-  color: #ffffff;
+  color: #312b2b;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,18 +94,13 @@ ul {
   max-width: 1300px;
   margin: auto;
 }
-.header-left-links .SubSpan {
-  font-size: 0.5em;
-  position: relative;
-  bottom: 1.3em;
-  font-weight: bold;
-  color: #1566f8;
-}
+
 .brand a {
-  color: #ffffff;
-  font-size: 3rem;
+  color: #312b2b;
+  font-size: 3em;
   font-weight: bold;
   text-decoration: none;
+  line-height: 2em;
 }
 
 .backToResult {
@@ -138,20 +133,33 @@ ul {
 .large {
   width: 30vh;
 }
+
 .header-left-links a {
-  color: #ffffff;
+  color: #312b2b;
   text-decoration: none;
   padding: 1rem;
-  font-size: 2em;
+  font-size: 2.3em;
+  margin: 0em 1em;
 }
 .header-left-links a:hover {
   color: #ff8000;
 }
+
+.header-left-links .SubSpan {
+  font-size: 0.5em;
+  position: relative;
+  bottom: 1.3em;
+  font-weight: bold;
+  color: #1566f8;
+}
 .header-right-links a {
-  color: #ffffff;
+  color: #312b2b;
   text-decoration: none;
   padding: 1rem;
   font-size: 1.5em;
+  font-weight: bold;
+  margin-right: 1em;
+  line-height: 3em;
 }
 .header-right-links a:hover {
   color: #ff8000;
@@ -161,9 +169,9 @@ ul {
 }
 .footer {
   grid-area: footer;
-  background-color: #312b2b;
+  background-color: #efefef;
   height: 20vh;
-  color: #ffffff;
+  color: #572a31;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +243,7 @@ a:hover {
   padding: 0.5rem;
   background: none;
   border: none;
-  color: #ffffff;
+  color: #312b2b;
   cursor: pointer;
 }
 .sidebar {
