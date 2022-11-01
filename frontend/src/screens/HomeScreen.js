@@ -10,10 +10,10 @@ export default function HomeScreen() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("http://localhost:4000/api/product/getdata");
+      const res = await fetch("http://localhost:5000/api/product/getAll");
       if (res.status === 200) {
         const data = await res.json();
-        setProducts(data.products);
+        setProducts(data[0].products);
         setOkay(true);
       } else {
         alert("통신 이상");
@@ -29,9 +29,9 @@ export default function HomeScreen() {
         <Header />
         {/* <div className="content"> */}
         <ul className="products">
-          {products.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
+          {products.map((product) => {
+            return <Product key={product._id} product={product} />;
+          })}
         </ul>
         <p>dodo</p>
         {/* </div> */}
