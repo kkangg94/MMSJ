@@ -8,7 +8,6 @@ import Header from "../components/Header";
 export default function CustomerService() {
   return (
     <>
-      <Header />
       <CustomerBenner />
       <CustomerSearch />
       {/* <CustomerIdea /> */}

@@ -10,7 +10,6 @@ import MenuBenner from "../components/MenuBenner";
 function Compare() {
   return (
     <>
-      <Header />
       <MenuBenner />
       <aside className="sidebar">
         <h3>Shopping Categories</h3>

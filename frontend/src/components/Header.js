@@ -17,6 +17,8 @@ export default function Header({ cart }) {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
+  console.log("CART", cart);
+
   const handleClick = () => {
     logout();
   };
@@ -92,7 +94,7 @@ export default function Header({ cart }) {
           )}
           {/* <a href="signin.html">Sign In</a> */}
         </div>
-        {/* <div className={styles.menu}>
+        <div className={styles.menu}>
           <Link to="/cart">
             <div className={styles.shopping_cart}>
               <img src="/images/icon-shopping-cart.svg" alt="cart" />
@@ -112,7 +114,7 @@ export default function Header({ cart }) {
               <span>로그인</span>
             </div>
           </Link>
-        </div> */}
+        </div>
       </header>
     </div>
   );

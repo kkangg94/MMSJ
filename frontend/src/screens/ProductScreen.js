@@ -100,7 +100,6 @@ export default function ProductScreen(props) {
   if (okay) {
     return (
       <div>
-        <Header />
         <div className="inner">
           <Link to="/api/compare" className="back">
             상품 페이지로 돌아가기 &nbsp; {">"}

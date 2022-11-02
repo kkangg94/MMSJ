@@ -10,7 +10,6 @@ import SearchBar from "../components/SearchBar";
 export default function Item() {
   return (
     <>
-      <Header />
       <StoreBenner />
       <ImageAvatars />
       <Store />

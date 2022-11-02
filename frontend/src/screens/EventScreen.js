@@ -11,7 +11,6 @@ export default function EventScreen({ products, setProducts }) {
   const [addEvent, setAddEvent] = useState(true);
   return (
     <>
-      <Header />
       <EventrBenner />
       <EventCard products={products} setProducts={setProducts} />
       {/* 관리자한테만 보이는 버튼 */}

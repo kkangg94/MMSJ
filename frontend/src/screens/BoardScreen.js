@@ -56,7 +56,6 @@ export default function BoardScreen() {
 
   return (
     <>
-      <Header />
       <CommunityBanner />
       <Title>커뮤니티</Title>
       <Button>
