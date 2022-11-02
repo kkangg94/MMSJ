@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import styled from "styled-components";
+import CarouselMain from "../components/CarouselM";
 import CompanyIntroduce from "../components/CompanyIntroduce";
 import Comunity from "../components/Comunity";
 import Footer from "../components/Footer";
