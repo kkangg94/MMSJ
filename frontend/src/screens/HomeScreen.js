@@ -13,7 +13,8 @@ export default function HomeScreen() {
       const res = await fetch("http://localhost:5000/api/product/getAll");
       if (res.status === 200) {
         const data = await res.json();
-        setProducts(data[0].products);
+        console.log(data);
+        setProducts(data);
         setOkay(true);
       } else {
         alert("통신 이상");

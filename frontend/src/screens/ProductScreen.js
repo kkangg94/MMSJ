@@ -9,45 +9,15 @@ import "../style/productScreen.css";
 
 export default function ProductScreen(props) {
   const params = useParams();
-  // const product = data.products.find((X) => X._id === params.id);
 
   const [product, setProduct] = useState({});
   const [reviews, setReviews] = useState([]);
   const [okay, setOkay] = useState(false);
-
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch("http://localhost:5000/api/product/getAll");
-      if (res.status === 200) {
-        const data = await res.json();
-        const product = data[0].products.find((X) => X._id === params.id);
-        setProduct(product);
-        setReviews(product.review);
-        setOkay(true);
-      } else {
-        alert("통신 이상");
-        setOkay(false);
-      }
-    }
-    fetchData();
-  }, []);
-
-  let newRating = 0;
+  const [reviewCounts, setReviewCounts] = useState(0);
+  const [reviewShow, setReviewShow] = useState(false);
 
   const reviewInput = useRef();
-  const handleReviewWrite = () => {
-    if (reviewInput.current.value === "") {
-      alert("리뷰 내용을 입력해 주세요");
-    } else {
-      setReviews([
-        ...reviews,
-        { rating: newRating, content: reviewInput.current.value },
-      ]);
-      reviewInput.current.value = "";
-    }
-  };
 
-  const [reviewShow, setReviewShow] = useState(false);
   const handleReviewShow = () => {
     setReviewShow(!reviewShow);
   };
@@ -55,8 +25,65 @@ export default function ProductScreen(props) {
   const [avg, setAvg] = useState(0);
 
   useEffect(() => {
+    async function fetchData() {
+      const res = await fetch("http://localhost:5000/api/product/getAll");
+      if (res.status === 200) {
+        const data = await res.json();
+        const product = data.find((X) => X._id === params.id);
+        setProduct(product);
+        setReviews(product.review);
+        setReviewCounts(product.numReviews);
+        setOkay(true);
+      } else {
+        alert("통신 이상");
+        setOkay(false);
+      }
+    }
+    fetchData();
+  }, [okay]);
+
+  let newRating = 0;
+
+  const handleReviewWrite = async () => {
+    if (reviewInput.current.value === "") {
+      alert("리뷰 내용을 입력해 주세요");
+    } else {
+      const newReview = {
+        rating: newRating,
+        content: reviewInput.current.value,
+      };
+
+      let total = 0;
+      reviews.map((el) => {
+        total += el.rating;
+      });
+      total += newRating;
+      let avg = total / (reviews.length + 1);
+
+      const res = await fetch("http://localhost:5000/api/product/write", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          _id: product._id,
+          review: newReview,
+          avg: avg,
+          numReviews: reviews.length + 1,
+        }),
+      });
+
+      // 프론트에 리뷰 반영
+      setReviews([...reviews, newReview]);
+      setReviewCounts(reviewCounts + 1);
+      reviewInput.current.value = "";
+      document.querySelector(`.star span`).style.width = "0%";
+      setReviewShow(false);
+    }
+  };
+
+  useEffect(() => {
     let total = 0;
-    console.log(reviews);
     reviews.map((el) => {
       total += el.rating;
     });
@@ -93,7 +120,7 @@ export default function ProductScreen(props) {
                   <span className="SubSpan"> 나만의 음료</span>
                 </li>
                 <li>
-                  <Rating rating={avg} numReviews={product.numReviews}></Rating>
+                  <Rating rating={avg} numReviews={reviewCounts}></Rating>
                 </li>
                 <li className="review-show-area">
                   {reviews.map((el) => {
