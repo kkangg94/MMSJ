@@ -1,52 +1,38 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
 
 export default function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { signup, error, isLoading } = useSignup();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { signup, error, isLoading } = useSignup();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await signup(email, password);
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await signup(email, password);
+    };
 
-  return (
-    <>
-      <Header></Header>
-      <form className="signup" onSubmit={handleSubmit}>
-        <h3>Sign up</h3>
-        <label>Email:</label>
-        <input
-          type="text"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
+    return (
+        <>
+            {/* <Header /> */}
+            <form className="signup" onSubmit={handleSubmit}>
+                <h3>Sign up</h3>
+                <label>Email:</label>
+                <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
+                <label>Password:</label>
+                <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
 
-        <button disabled={isLoading}>Sign up</button>
-        {error && <div className="error">{error}</div>}
-        <button>
-          <Link to="/login">로그인하러 가기</Link>
-        </button>
-      </form>
-      <Footer></Footer>
-    </>
-  );
+                <button disabled={isLoading}>Sign up</button>
+                {error && <div className="error">{error}</div>}
+                <button>
+                    <Link to="/login">로그인하러 가기</Link>
+                </button>
+            </form>
+            <Footer></Footer>
+        </>
+    );
 }
 
 // import React, { useState } from "react";
