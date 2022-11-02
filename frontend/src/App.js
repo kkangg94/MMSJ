@@ -18,9 +18,12 @@ import BoardForm from "./components/BoardForm";
 import CustomerService from "./screens/CustomerService";
 import Item from "./screens/StoreScreen";
 import Practice from "./components/Practice";
+import { useState } from "react";
+import ProductEvent from "./components/productEvent";
 
 function App() {
     const { user } = useAuthContext();
+    const [products, setProducts] = useState([]);
     return (
         <>
             {/* <Compare /> */}
@@ -31,7 +34,8 @@ function App() {
                 <Route path="/api/compare/product/:id" element={<ProductScreen />}></Route>
                 <Route path="/" element={<MainPage />} exact></Route>
                 <Route path="/api/compare" element={<HomeScreen />} exact></Route>
-                <Route path="/api/event" element={<EventScreen />}></Route>
+                <Route path="/api/event" element={<EventScreen products={products} setProducts={setProducts} />}></Route>
+                <Route path="/api/event/product/:id" element={<ProductEvent />} />
                 {/* <Route path="/api/event" element={<Practice />}></Route> */}
                 {/* <Route path="/api/event/add" element={<AddEventScreen />}></Route> */}
                 <Route path="/api/board" element={<BoardScreen />}></Route>
