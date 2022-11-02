@@ -50,6 +50,7 @@ export default function BoardScreen() {
     //fetchBoards();
     // }
     fetchBoards();
+    window.scrollTo(0, 0);
   }, [dispatch]);
 
   return (

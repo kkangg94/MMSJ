@@ -29,6 +29,7 @@ export default function HomeScreen() {
     return (
       <>
         <Header />
+        <MenuBenner />
         {/* <div className="content"> */}
         <ul className="products">
           {products.map((product) => {
