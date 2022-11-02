@@ -1,11 +1,7 @@
 import Compare from "./screens/CompareScrenn";
 import Map from "./components/Map";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import EventScreen from "./screens/EventScreen";
@@ -21,37 +17,38 @@ import Notfound from "./components/Notfound";
 import BoardForm from "./components/BoardForm";
 import CustomerService from "./screens/CustomerService";
 import Item from "./screens/StoreScreen";
+import Practice from "./components/Practice";
 
 function App() {
-  return (
-    <>
-      {/* <Compare /> */}
-      {/* <Map></Map> */}
-      {/* <Notfound></Notfound> */}
+    const { user } = useAuthContext();
+    return (
+        <>
+            {/* <Compare /> */}
+            {/* <Map></Map> */}
+            {/* <Notfound></Notfound> */}
 
-      <Routes>
-        <Route
-          path="/api/compare/product/:id"
-          element={<ProductScreen />}
-        ></Route>
-        <Route path="/" element={<MainPage />} exact></Route>
-        <Route path="/api/compare" element={<HomeScreen />} exact></Route>
-        <Route path="/api/event" element={<EventScreen />}></Route>
-        <Route path="/api/event/add" element={<AddEventScreen />}></Route>
-        <Route path="/api/board" element={<BoardScreen />}></Route>
-        <Route path="/api/board/create" element={<BoardForm />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
-        <Route path="*" element={<Notfound />}></Route>
-        <Route path="/api/qna" element={<CustomerService />}></Route>
-        <Route path="/api/store" element={<Item />}></Route>
-        <Route path="/api/event" element={<EventScreen />}></Route>
-      </Routes>
+            <Routes>
+                <Route path="/api/compare/product/:id" element={<ProductScreen />}></Route>
+                <Route path="/" element={<MainPage />} exact></Route>
+                <Route path="/api/compare" element={<HomeScreen />} exact></Route>
+                <Route path="/api/event" element={<EventScreen />}></Route>
+                {/* <Route path="/api/event" element={<Practice />}></Route> */}
+                {/* <Route path="/api/event/add" element={<AddEventScreen />}></Route> */}
+                <Route path="/api/board" element={<BoardScreen />}></Route>
+                <Route path="/api/board/create" element={<BoardForm />}></Route>
+                <Route path="/login" element={user ? <Navigate to="/"></Navigate> : <Login />}></Route>
+                <Route path="/signup" element={<Signup />}></Route>
 
-      {/* <Compare /> */}
-      {/* <Footer /> */}
-    </>
-  );
+                <Route path="/api/store" element={<Item />}></Route>
+                {/* <Route path="/api/event" element={<EventScreen />}></Route> */}
+
+                <Route path="/api/qna" element={<CustomerService />}></Route>
+                <Route path="*" element={<Notfound />}></Route>
+            </Routes>
+            {/* <Compare /> */}
+            {/* <Footer /> */}
+        </>
+    );
 }
 
 export default App;
