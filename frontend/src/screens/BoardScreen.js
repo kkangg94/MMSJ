@@ -9,13 +9,7 @@ import { useBoardsContext } from "../hooks/useBoardsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import CommunityBanner from "../components/communityBanner";
 
-const Title = styled.h1`
-    text-align: center;
-    /* border: 1px solid #000; */
-    font-size: 3em;
-`;
-
-const Button = styled.button``;
+// const Button = styled.button``;
 
 const Container = styled.div`
     position: relative;
@@ -57,10 +51,9 @@ export default function BoardScreen() {
     return (
         <>
             <CommunityBanner />
-            <Title>커뮤니티</Title>
-            <Button>
+            <button>
                 <Link to="create">글쓰기</Link>
-            </Button>
+            </button>
 
             <Container>
                 <Boardtable>

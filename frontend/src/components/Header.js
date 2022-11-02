@@ -61,7 +61,7 @@ export default function Header({ cart }) {
                         {/* <Route path="/" element={<MainScreen />} /> */}
                         {/* <Route path="/api/compare" element={<CompareScreen />} /> */}
                         {/* <Route path="/api/event" element={<EventScreen />} /> */}
-                        <Route path="/api/board" element={<BoardScreen />} />
+                        {/* <Route path="/api/board" element={<BoardScreen />} /> */}
                         {/* <Route path="/api/store" element={<StoreScreen />} /> */}
                         {/* <Route path="/api/qna" element={<QnaScreen />} /> */}
                     </Routes>

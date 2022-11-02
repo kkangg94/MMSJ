@@ -85,7 +85,7 @@ ul {
     font-family: "OTWelcomeRA";
     grid-area: header;
     background-color: #ffffff;
-    height: 7vw;
+    min-height: 7vw;
     color: #312b2b;
     display: flex;
     justify-content: space-between;
@@ -366,7 +366,7 @@ input.error {
         display: none;
     }
 
-    .brand button {
+    div.brand button {
         display: inline-block;
     }
 }
