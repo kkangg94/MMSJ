@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import styles from "./eventDetail.module.css";
 
 const EventDetail = () => {
     const { id } = useParams();
@@ -14,13 +15,20 @@ const EventDetail = () => {
     }, [id]);
     return (
         <>
-            <div>{product.id}</div>
-            <div>{product.title}</div>
-            <div>{product.bran}</div>
-            <div>{product.author}</div>
-            <div>{product.date}</div>
-            <div>{product.views}</div>
-            <img src={product.detailImg} alt="detail image" />
+            <div className={styles.wrapper}>
+                <div className={styles.container}>
+                    <div className={styles.box}>
+                        <div className={styles.product_title}>{product.title}</div>
+                        <div className={styles.product_content}>{product.content}</div>
+                        <div className={styles.product_author}>{product.author}</div>
+                        <div className={styles.product_date}>{product.date}</div>
+                        <div className={styles.product_views}>{product.views}</div>
+                        <div className={styles.product_detailImg}>
+                            <img src={product.detailImg} alt="detail" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

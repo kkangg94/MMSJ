@@ -15,7 +15,7 @@ const eventProduct = ({ product }) => {
                 </div>
 
                 <div className={styles.product_name}>
-                    <span>{product.brand}</span>
+                    <span>{product.author}</span>
                 </div>
             </div>
         </>

@@ -1,0 +1,41 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+    justify-items: center;
+    margin: 0 10%;
+}
+
+.container {
+    width: 80%;
+}
+
+.box {
+}
+
+.product_id {
+}
+
+.product_title {
+    font-size: 2em;
+}
+
+.product_content {
+    font-size: 20px;
+}
+
+.product_brand {
+}
+
+.product_author {
+}
+
+.product_date {
+}
+
+.product_views {
+}
+
+.product_detailImg {
+    margin: auto;
+    max-width: 100%;
+}

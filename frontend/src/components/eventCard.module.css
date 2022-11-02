@@ -1,43 +1,47 @@
 .filter {
-  display: flex;
-  width: 85%;
-  margin: 0 auto;
-  justify-content: flex-end;
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: flex-end;
 }
 
 .filter > p:not(:last-child)::after {
-  content: "|";
-  padding: 10px;
+    content: "|";
+    padding: 10px;
 }
 
 .filter p {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .flex_wrap {
-  max-width: 1440px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  gap: 70px 0px;
-  margin: 0 auto;
-  margin-top: 35px;
+    max-width: 1040px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 70px 0px;
+    margin: 0 auto;
+    margin-top: 60px;
 }
 
-@media (max-width: 1440px) {
-  .flex_wrap {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* .wrap {
+    width: 1400px;
+} */
+
+@media (max-width: 1340px) {
+    .flex_wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-  .flex_wrap {
-    grid-template-columns: repeat(1, 1fr);
-  }
+    .flex_wrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 @media (max-width: 360px) {
-  .filter p {
-    font-size: 12px;
-  }
+    .filter p {
+        font-size: 12px;
+    }
 }

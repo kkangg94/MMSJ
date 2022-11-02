@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import EventProduct from "./eventProduct";
 import styles from "./eventCard.module.css";
+import Footer from "./Footer";
 
 const EventCard = ({ products, setProducts }) => {
     useEffect(() => {
