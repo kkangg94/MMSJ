@@ -28,7 +28,6 @@ export default function HomeScreen() {
   if (okay) {
     return (
       <>
-        <Header />
         <MenuBenner />
         {/* <div className="content"> */}
         <ul className="products">
@@ -44,7 +43,6 @@ export default function HomeScreen() {
   } else {
     return (
       <>
-        <Header />
         <div>통신이 이상합니다.</div>
         <Footer />
       </>

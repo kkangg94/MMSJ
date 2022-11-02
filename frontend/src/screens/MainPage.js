@@ -11,7 +11,6 @@ import Slider from "../components/Slider";
 function MainPage() {
   return (
     <>
-      <Header />
       <Carousel />;
       <CompanyIntroduce />
       <NewPost />

@@ -45,7 +45,7 @@ function App() {
       {/* <Compare /> */}
       {/* <Map></Map> */}
       {/* <Notfound></Notfound> */}
-      {/* <Header cart={cart} /> */}
+      <Header cart={cart} />
       <Routes>
         <Route
           path="/api/compare/product/:id"

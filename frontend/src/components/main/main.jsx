@@ -31,7 +31,6 @@ export const Main = ({ products, setProducts, convertPrice }) => {
 
   return (
     <>
-      <Header />
       <StoreBenner />
       <div className={styles.filter}>
         <p onClick={() => sortProduct("recent")}>최신순</p>
