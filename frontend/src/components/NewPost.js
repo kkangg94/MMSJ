@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NewPostImg from "../images/wonddo.png";
-import CoffeeImg from "../images/tumblr.png";
+import CoffeeImg from "../images/starbucks.png";
 import CoffeeBean from "../images/coffeebean.jpg";
 
 const Container = styled.div`
@@ -15,7 +15,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${NewPostImg});
-  background-color: grey;
+  /* background-color: grey; */
 `;
 
 const ContainerInner = styled.div`
@@ -90,7 +90,7 @@ export default function NewPost() {
             <TitleThree>오늘의 이야기, 일상의 커피를 즐겨보세요</TitleThree>
             <DetailBtn>자세히 보기</DetailBtn>
           </LeftDiv>
-          <RightDiv>{/* <Img src={}></Img> */}</RightDiv>
+          <RightDiv>{/* {<Img src={CoffeeImg}></Img>}*/}</RightDiv>
         </ContainerInner>
       </Container>
     </>

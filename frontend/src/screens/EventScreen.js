@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import EventrBenner from "../components/EventBenner";
 import EventCard from "../components/EventCard";
+import "../index.css";
 
 export default function EventScreen() {
   const [addEvent, setAddEvent] = useState(true);

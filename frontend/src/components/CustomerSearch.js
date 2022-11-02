@@ -70,6 +70,15 @@ const Question = styled.span`
   line-height: 2em;
 `;
 
+const StackDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StackDivInner = styled.div`
+  display: flex;
+`;
+
 const Answer = styled.span`
   font-size: 2em;
   /* line-height: 2em; */
@@ -119,21 +128,27 @@ export default function CustomerSearch() {
             <RightDiv>
               <InnerLeft>
                 <Stack direction="row" spacing={2}>
-                  <Avatar sx={{ marginLeft: "3em" }}>Q</Avatar>
-                  <Question>[사용] 홈페이지 주소는 무엇인가요?</Question>
-                  <Avatar
-                    sx={{
-                      bgcolor: deepOrange[500],
-                      marginLeft: "3em",
-                      marginTop: "1em",
-                    }}
-                  >
-                    A
-                  </Avatar>
-                  <Answer>
-                    PC 접속 시 : https://www.hollys.co.kr <br />
-                    모바일 접속 시 : https://m.hollys.co.kr
-                  </Answer>
+                  <StackDiv>
+                    <StackDivInner>
+                      <Avatar sx={{ marginLeft: "3em" }}>Q</Avatar>
+                      <Question>[사용] 홈페이지 주소는 무엇인가요?</Question>
+                    </StackDivInner>
+                    <StackDivInner>
+                      <Avatar
+                        sx={{
+                          bgcolor: deepOrange[500],
+                          marginLeft: "3em",
+                          marginTop: "1em",
+                        }}
+                      >
+                        A
+                      </Avatar>
+                      <Answer>
+                        PC 접속 시 : https://www.hollys.co.kr <br />
+                        모바일 접속 시 : https://m.hollys.co.kr
+                      </Answer>
+                    </StackDivInner>
+                  </StackDiv>
                 </Stack>
               </InnerLeft>
               <InnerRight></InnerRight>
