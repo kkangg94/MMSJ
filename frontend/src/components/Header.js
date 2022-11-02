@@ -11,6 +11,7 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import styles from "./topNavigationBar.module.css";
+import LOGO from "../images/drink.png";
 
 export default function Header({ cart }) {
   const { logout } = useLogout();
@@ -32,7 +33,9 @@ export default function Header({ cart }) {
     <div className="out">
       <header className="header">
         <div className="brand">
-          <button>&#9776;</button>
+          <button>
+            <image></image>&#9776;
+          </button>
           <Link to="/">뭐마시지?</Link>
         </div>
         <div className="header-left-links">
