@@ -13,13 +13,17 @@
 }
 
 .box {
+    margin-top: 10em;
 }
 
 .product_id {
 }
 
 .product_title {
-    font-size: 5em;
+    font-size: 3.5em;
+    border-top: 3px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 30px;
 }
 
 .product_content {
