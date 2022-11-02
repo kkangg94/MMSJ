@@ -35,6 +35,7 @@ const Content = styled.div`
     text-align: center;
     margin-top: 3.6em;
     font-weight: bold;
+    text-shadow: 5px 0 0 #f54;
 `;
 
 export default function communityBanner() {
