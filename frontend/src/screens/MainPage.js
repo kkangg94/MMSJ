@@ -12,7 +12,7 @@ import Slider from "../components/Slider";
 function MainPage() {
   return (
     <>
-      <Carousel />;
+      <CarouselMain />
       <CompanyIntroduce />
       <NewPost />
       <Comunity />
