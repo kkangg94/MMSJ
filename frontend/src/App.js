@@ -33,7 +33,7 @@ function App() {
                 <Route path="/api/compare" element={<HomeScreen />} exact></Route>
                 <Route path="/api/event" element={<EventScreen />}></Route>
                 {/* <Route path="/api/event" element={<Practice />}></Route> */}
-                <Route path="/api/event/add" element={<AddEventScreen />}></Route>
+                {/* <Route path="/api/event/add" element={<AddEventScreen />}></Route> */}
                 <Route path="/api/board" element={<BoardScreen />}></Route>
                 <Route path="/api/board/create" element={<BoardForm />}></Route>
                 <Route path="/login" element={user ? <Navigate to="/"></Navigate> : <Login />}></Route>
