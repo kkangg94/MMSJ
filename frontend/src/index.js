@@ -7,15 +7,18 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { BoardContextProvider } from "./context/BoardContext";
 import { AuthContextProvider } from "./context/AuthContext";
+import { EventContextProvider } from "./context/EventContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // 라우팅할려면 BrowserRouter로 감싸야한다
   <AuthContextProvider>
     <BoardContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <EventContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </EventContextProvider>
     </BoardContextProvider>
   </AuthContextProvider>
 );

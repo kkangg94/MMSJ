@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import IMG from "../images/service.jpg";
+import IMG from "../images/snoopy.png";
 import IMG2 from "../images/treetexture.png";
+import BG from "../images/bg.jpg";
 
 const Container = styled.div`
   position: relative;
   overflow: hidden;
   height: 50vh;
   width: 100%;
-  background-color: grey;
+  background-image: url(${BG});
+  background-color: #7e787c;
   /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
-  background-image: url(${IMG});
   background-blend-mode: soft-light, screen;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-size: cover;
   /* margin: 4em 0; */
 `;
@@ -29,7 +30,7 @@ const ContainerInner = styled.div`
 const Div = styled.div`
   position: relative;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
 `;
 
 const Content = styled.div`
@@ -40,13 +41,13 @@ const Content = styled.div`
   font-weight: bold;
 `;
 
-export default function CustomerBenner() {
+export default function StoreBenner() {
   return (
     <>
       <Container>
         <ContainerInner>
           <Div>
-            <Content>Customer Service & Idea</Content>
+            <Content>GIFT SHOP</Content>
           </Div>
         </ContainerInner>
       </Container>

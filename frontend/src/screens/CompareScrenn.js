@@ -1,15 +1,17 @@
 import data from "../data";
 import Product from "../components/Product";
 
-import ProductScreen from "../screens/ProductScreen";
-import HomeScreen from "../screens/HomeScreen";
-import Header from "./Header";
-import Footer from "./Footer";
+import ProductScreen from "./ProductScreen";
+import HomeScreen from "./HomeScreen";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import MenuBenner from "../components/MenuBenner";
 
 function Compare() {
   return (
     <>
       <Header />
+      <MenuBenner />
       <aside className="sidebar">
         <h3>Shopping Categories</h3>
         <button className="sidebar-close-button">x</button>

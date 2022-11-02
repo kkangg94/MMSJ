@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import MenuBenner from "../components/MenuBenner";
 
 export default function HomeScreen() {
   const [okay, setOkay] = useState(false);
