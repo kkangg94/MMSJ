@@ -35,7 +35,7 @@ export default function HomeScreen() {
             return <Product key={product._id} product={product} />;
           })}
         </ul>
-        <p>dodo</p>
+        <p>1</p>
         {/* </div> */}
         <Footer />
       </>
