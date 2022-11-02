@@ -7,6 +7,7 @@ import BoardRep from "../components/BoardRep";
 import BoardForm from "../components/BoardForm";
 import { useBoardsContext } from "../hooks/useBoardsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import CommunityBanner from "../components/communityBanner";
 
 const Title = styled.h1`
   text-align: center;
@@ -56,6 +57,7 @@ export default function BoardScreen() {
   return (
     <>
       <Header />
+      <CommunityBanner />
       <Title>커뮤니티</Title>
       <Button>
         <Link to="create">글쓰기</Link>

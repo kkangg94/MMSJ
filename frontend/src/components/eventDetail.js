@@ -24,7 +24,7 @@ const EventDetail = () => {
                             <div className={styles.title_etc}>
                                 <div className={styles.product_author}>{product.author}</div>
                                 <div className={styles.product_date}>작성일 : {product.date}</div>
-                                <div className={styles.product_views}>조회수 : {product.views}</div>
+                                {/* <div className={styles.product_views}>조회수 : {product.views}</div> */}
                             </div>
                         </div>
                         <div className={styles.product_content}>{product.content}</div>
@@ -35,7 +35,7 @@ const EventDetail = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };

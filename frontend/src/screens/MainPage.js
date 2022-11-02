@@ -12,7 +12,7 @@ function MainPage() {
   return (
     <>
       <Header />
-      <Slider />;
+      <Carousel />;
       <CompanyIntroduce />
       <NewPost />
       <Comunity />

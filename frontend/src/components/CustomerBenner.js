@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import IMG from "../images/service.jpg";
+import IMG from "../images/service2.jpg";
 import IMG2 from "../images/treetexture.png";
 
 const Container = styled.div`
@@ -38,6 +38,7 @@ const Content = styled.div`
   text-align: center;
   margin-top: 3.6em;
   font-weight: bold;
+  text-shadow: 5px 0 0 #f54;
 `;
 
 export default function CustomerBenner() {
