@@ -3,6 +3,7 @@ import { useLogin } from "../hooks/useLogin";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { BrowserRouter, BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import styles from "./login.css";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ export default function Login() {
     return (
         <>
             {/* <Header></Header> */}
+            <div className="blank"></div>
             <form className="login" onSubmit={handleSubmit}>
                 <h3>로그인</h3>
                 <label>이메일</label>

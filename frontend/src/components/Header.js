@@ -85,13 +85,7 @@ export default function Header({ cart }) {
 
                     {/* <Link to='/cart'>Cart</Link> */}
                     {/* login이 아닐때 나타납니다 */}
-                    {!user && (
-                        <div>
-                            <Link to="/login">Signin</Link>
 
-                            {/* <FontAwesomeIcon icon={faUser} size="2x" /> */}
-                        </div>
-                    )}
                     {/* <a href="signin.html">Sign In</a> */}
                 </div>
                 <div className={styles.menu}>
@@ -108,12 +102,16 @@ export default function Header({ cart }) {
                             )}
                         </div>
                     </Link>
-                    <Link to="">
-                        <div className={styles.mypage}>
-                            <img src="/images/icon-user.svg" alt="user" />
-                            <span>로그인</span>
+                    {!user && (
+                        <div>
+                            <Link to="/login">
+                                <div className={styles.mypage}>
+                                    <img src="/images/icon-user.svg" alt="user" />
+                                    <span>로그인</span>
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
+                    )}
                 </div>
             </header>
         </div>

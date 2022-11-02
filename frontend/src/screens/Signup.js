@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { BrowserRouter, BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
+import styles from "./signUp.css";
 
 export default function Signup() {
     const [email, setEmail] = useState("");
@@ -17,20 +18,23 @@ export default function Signup() {
     return (
         <>
             {/* <Header /> */}
-            <form className="signup" onSubmit={handleSubmit}>
-                <h3>Sign up</h3>
-                <label>Email:</label>
-                <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
-                <label>Password:</label>
-                <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+            <div className="blank"></div>
+            <div className="wrap">
+                <form className="signup" onSubmit={handleSubmit}>
+                    <h3>Sign up</h3>
+                    <label>Email:</label>
+                    <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <label>Password:</label>
+                    <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
 
-                <button disabled={isLoading}>Sign up</button>
-                {error && <div className="error">{error}</div>}
-                <button>
-                    <Link to="/login">로그인하러 가기</Link>
-                </button>
-            </form>
-            <Footer></Footer>
+                    <button disabled={isLoading}>가입하기</button>
+                    {error && <div className="error">{error}</div>}
+                    <button>
+                        <Link to="/login">로그인하러 가기</Link>
+                    </button>
+                </form>
+                <Footer />
+            </div>
         </>
     );
 }
