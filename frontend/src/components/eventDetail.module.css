@@ -1,12 +1,15 @@
 .wrapper {
     width: 100%;
     position: relative;
-    justify-items: center;
-    margin: 0 10%;
+    /* margin: 0 10%; */
+    display: flex;
+    justify-content: center;
+    left: -2%;
 }
 
 .container {
-    width: 80%;
+    width: 70%;
+    height: 200vh;
 }
 
 .box {
@@ -16,11 +19,11 @@
 }
 
 .product_title {
-    font-size: 2em;
+    font-size: 5em;
 }
 
 .product_content {
-    font-size: 20px;
+    font-size: 2em;
 }
 
 .product_brand {
@@ -35,7 +38,8 @@
 .product_views {
 }
 
-.product_detailImg {
-    margin: auto;
+.product_detailImg img {
+    /* margin: auto; */
     max-width: 100%;
+    height: auto;
 }
