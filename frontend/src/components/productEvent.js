@@ -8,7 +8,7 @@ const productEvent = () => {
             <Header />
             <EventrBenner />
             <EventDetail />
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };
