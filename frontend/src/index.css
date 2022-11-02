@@ -49,7 +49,7 @@ body {
     height: 100%;
 }
 
-button {
+.brand button {
     padding: 1rem;
     border-radius: 0.5rem;
     border: 0.1rem #a4a4a4 solid;
@@ -62,7 +62,7 @@ button {
     display: none;
 }
 
-button:hover {
+.brand button:hover {
     border: 0.1rem #404040 solid;
     transition: 0.1s ease;
 }
@@ -85,7 +85,7 @@ ul {
     font-family: "OTWelcomeRA";
     grid-area: header;
     background-color: #ffffff;
-    height: 12vh;
+    height: 7vw;
     color: #312b2b;
     display: flex;
     justify-content: space-between;
@@ -366,7 +366,7 @@ input.error {
         display: none;
     }
 
-    button {
+    .brand button {
         display: inline-block;
     }
 }

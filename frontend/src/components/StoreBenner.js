@@ -39,7 +39,7 @@ const Content = styled.div`
     text-align: center;
     margin-top: 3.6em;
     font-weight: bold;
-    text-shadow: 5px 0 0 #f54;
+    text-shadow: 5px 0 0 #ff8000;
 `;
 
 export default function StoreBenner() {
