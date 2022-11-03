@@ -11,16 +11,16 @@ import { EventContextProvider } from "./context/EventContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    // 라우팅할려면 BrowserRouter로 감싸야한다
-    <AuthContextProvider>
-        <BoardContextProvider>
-            <EventContextProvider>
-                <BrowserRouter>
-                    <App />
-                </BrowserRouter>
-            </EventContextProvider>
-        </BoardContextProvider>
-    </AuthContextProvider>
+  // 라우팅할려면 BrowserRouter로 감싸야한다
+  <AuthContextProvider>
+    <BoardContextProvider>
+      <EventContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </EventContextProvider>
+    </BoardContextProvider>
+  </AuthContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

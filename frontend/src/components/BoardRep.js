@@ -4,8 +4,6 @@ import { useBoardsContext } from "../hooks/useBoardsContext";
 import { format, formatDistance, formatRelative, subDays } from "date-fns";
 // 게시판 반복문 돌리는거
 import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./BoardTitle.css";
 
 export default function BoardRep({ board }) {
     const { dispatch } = useBoardsContext();
@@ -20,36 +18,24 @@ export default function BoardRep({ board }) {
         }
     };
 
-    const change_date = (published_at) => {
-        var moment = require("moment");
-
-        const publish_date = moment(published_at).format("YYYY년 MM월 DD일");
-        return publish_date;
-    };
-
     return (
         <>
             <tr>
                 <td className="seq" key={board.seq}>
                     {board.seq}
                 </td>
-                <td className="left">
-                    <Link to={`${board.seq}`}>
-                        <div className="title">{board.title}</div>
-                    </Link>
-                </td>
-                {/* <td className="content">{board.content}</td> */}
+                <td className="title">{board.title}</td>
+                <td className="content">{board.content}</td>
                 <td className="writtentime">
                     {/* {board.writtenTime} */}
-                    {/* {console.log(change_date(board.writtenTime))} */}
-                    {/* {formatRelative(subDays(new Date(board.writtenTime), 3), new Date())} */}
-                    {change_date(board.writtenTime)}
+                    {console.log(board)}
+                    {formatRelative(subDays(new Date(board.writtenTime), 3), new Date())}
                 </td>
                 <td className="like">{board.like}</td>
                 <td className="view">{board.view}</td>
-                {/* <td>
+                <td>
                     <i onClick={handleClick} className="fa-solid fa-trash"></i>
-                </td> */}
+                </td>
             </tr>
         </>
     );

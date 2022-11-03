@@ -60,9 +60,9 @@ export const Cart = ({ cart, setCart, convertPrice, checkLists, setCheckLists })
 
     return (
         <>
-            {/* <header className={styles.header}>
+            <header className={styles.header}>
                 <h1>장바구니</h1>
-            </header> */}
+            </header>
 
             <CartHeader handleAllCheck={handleAllCheck} isAllChecked={isAllChecked} />
 

@@ -49,7 +49,7 @@ body {
     height: 100%;
 }
 
-.brand button {
+button {
     padding: 1rem;
     border-radius: 0.5rem;
     border: 0.1rem #a4a4a4 solid;
@@ -59,14 +59,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #f8f8f8;
     cursor: pointer;
-    display: none;
 }
-
-.brand button:hover {
+button:hover {
     border: 0.1rem #404040 solid;
-    transition: 0.1s ease;
 }
-
 button.primary {
     background-color: #f0c040;
     /* background-color: #e4134e; */
@@ -85,23 +81,14 @@ ul {
     font-family: "OTWelcomeRA";
     grid-area: header;
     background-color: #ffffff;
-    height: 10em;
+    height: 12vh;
     color: #312b2b;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    /* max-width: 1300px; */
-    /* margin: auto; */
-    position: fixed;
-    z-index: 999;
-    box-shadow: 5px 5px 20px 3px rgba(0, 0, 0, 0.062);
-    width: 100vw;
-    box-sizing: border-box;
-}
-
-.brand {
-    min-width: 100px;
+    max-width: 1300px;
+    margin: auto;
 }
 
 .brand a {
@@ -143,32 +130,15 @@ ul {
     width: 30vh;
 }
 
-.header.brand.button {
-    background-image: url("../src/images/drink.png");
-}
-
-.header-left-links {
-    /* margin: 0 0 0 20em; */
-    display: flex;
-    justify-content: space-between;
-    /* width: 70em; */
-}
-
 .header-left-links a {
     color: #312b2b;
     text-decoration: none;
-    padding: 1em 1.1em;
+    padding: 1rem;
     font-size: 2.3em;
-
-    /* flex-direction: row; */
+    margin: 0em 1em;
 }
 .header-left-links a:hover {
-    transition: 0.1s ease;
     color: #ff8000;
-}
-
-.header-left-links a:hover .SubSpan {
-    transition: 0.1s ease;
 }
 
 .header-left-links .SubSpan {
@@ -188,7 +158,6 @@ ul {
     line-height: 3em;
 }
 .header-right-links a:hover {
-    transition: 0.1s ease;
     color: #ff8000;
 }
 .main {
@@ -202,9 +171,6 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 0;
-    margin-top: 3vw;
-    /* width: 100vw; */
 }
 .footer p {
     display: flex;
@@ -216,7 +182,6 @@ a {
 }
 a:hover {
     color: #ff8000;
-    transition: 0.1s ease;
 }
 /* Home Screen */
 .products {
@@ -359,7 +324,7 @@ a:hover {
     flex: 5;
 }
 #board-list .writtentime {
-    flex: 1;
+    flex: 3;
 }
 #board-list .like {
     flex: 1;
@@ -371,17 +336,8 @@ a:hover {
 input.error {
     border: 1px solid red;
 }
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 948px) {
     .header-left-links {
         display: none;
-    }
-
-    div.brand button {
-        display: inline-block;
-    }
-
-    .header {
-        height: 7em;
-        justify-content: space-between;
     }
 }

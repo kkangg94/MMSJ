@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import IMG from "../images/party.jpg";
+import IMG from "../images/memo.jpg";
 
 const Container = styled.div`
     position: relative;
     overflow: hidden;
-    height: 20vw;
+    height: 50vh;
     width: 100%;
     background-color: grey;
     /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
@@ -22,22 +22,21 @@ const ContainerInner = styled.div`
     margin: 3em 14em;
     /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
     border-radius: 3em;
-    line-height: 18vw;
 `;
 
 const Div = styled.div`
     position: relative;
     width: 100%;
-    height: 5vw;
+    height: 20vh;
 `;
 
 const Content = styled.div`
     color: white;
-    font-size: 7em;
+    font-size: 5em;
     text-align: center;
-    // margin-top: 1.7em;
+    margin-top: 3.6em;
     font-weight: bold;
-    text-shadow: 5px 0 0 #ff8000;
+    text-shadow: 5px 0 0 #f54;
 `;
 
 export default function EventrBenner() {

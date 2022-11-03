@@ -99,7 +99,7 @@ export default function AddEventScreen() {
           </button>
         </form>
       </Container>
-      <Footer />
+      <Footer></Footer>
     </>
   );
 }
