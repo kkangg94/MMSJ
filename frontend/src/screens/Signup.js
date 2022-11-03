@@ -4,6 +4,12 @@ import Footer from "../components/Footer";
 import { BrowserRouter, BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
 import styles from "./signUp.css";
+import styled from "styled-components";
+
+const Blank = styled.div`
+    width: 100%;
+    height: 10em;
+`;
 
 export default function Signup() {
     const [email, setEmail] = useState("");
@@ -18,7 +24,7 @@ export default function Signup() {
     return (
         <>
             {/* <Header /> */}
-            <div className="blank"></div>
+            <Blank />
             <div className="wrap">
                 <form className="signup" onSubmit={handleSubmit}>
                     <h3>Sign up</h3>

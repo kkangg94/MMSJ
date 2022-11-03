@@ -9,6 +9,11 @@ import { useBoardsContext } from "../hooks/useBoardsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import CommunityBanner from "../components/communityBanner";
 
+const Blank = styled.div`
+    width: 100%;
+    height: 10em;
+`;
+
 // const Button = styled.button``;
 
 const Container = styled.div`
@@ -50,6 +55,7 @@ export default function BoardScreen() {
 
     return (
         <>
+            <Blank />
             <CommunityBanner />
             <button>
                 <Link to="create">글쓰기</Link>
