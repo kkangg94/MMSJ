@@ -4,6 +4,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { BrowserRouter, BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import styles from "./login.css";
+import styled from "styled-components";
+
+const Blank = styled.div`
+    width: 100%;
+    height: 10em;
+`;
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -20,7 +26,7 @@ export default function Login() {
     return (
         <>
             {/* <Header></Header> */}
-            <div className="blank"></div>
+            <Blank />
             <form className="login" onSubmit={handleSubmit}>
                 <h3>로그인</h3>
                 <label>이메일</label>

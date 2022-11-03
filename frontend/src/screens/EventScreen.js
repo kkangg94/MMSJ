@@ -7,10 +7,16 @@ import EventrBenner from "../components/EventBenner";
 import EventCard from "../components/EventCard";
 import "../index.css";
 
+const Blank = styled.div`
+    width: 100%;
+    height: 10em;
+`;
+
 export default function EventScreen({ products, setProducts }) {
     const [addEvent, setAddEvent] = useState(true);
     return (
         <>
+            <Blank />
             <EventrBenner />
             <EventCard products={products} setProducts={setProducts} />
             {/* 관리자한테만 보이는 버튼 */}
