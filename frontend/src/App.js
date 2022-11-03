@@ -23,6 +23,7 @@ import ProductEvent from "./components/productEvent";
 import Home from "./pages/home";
 import Product from "./pages/product";
 import Basket from "./pages/basket";
+import BoardContent from "./components/boardContent";
 
 function App() {
     const [product, setProduct] = useState([]);
@@ -52,6 +53,7 @@ function App() {
                 {/* <Route path="/api/event/add" element={<AddEventScreen />}></Route> */}
 
                 <Route path="/api/board" element={<BoardScreen cart={cart} />}></Route>
+                <Route path="/api/board/:id" element={<BoardContent cart={cart} />}></Route>
                 <Route path="/api/board/create" element={<BoardForm />}></Route>
 
                 {/* <Route path="/api/store" element={<Item />}></Route> */}

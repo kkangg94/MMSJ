@@ -8,23 +8,22 @@ import BoardForm from "../components/BoardForm";
 import { useBoardsContext } from "../hooks/useBoardsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 import CommunityBanner from "../components/communityBanner";
+import styles from "./boardScreen.css";
 
 const Blank = styled.div`
     width: 100%;
     height: 10em;
 `;
 
-// const Button = styled.button``;
-
 const Container = styled.div`
     position: relative;
     width: 100%;
     height: 100vh;
 
-    justify-content: center;
+    // justify-content: center;
     /* border: 1px solid #000; */
 `;
-const Boardtable = styled.table`
+const Boardtable = styled.div`
     width: 100%;
     height: 2em;
     font-size: 2em;
@@ -64,17 +63,17 @@ export default function BoardScreen() {
             <Container>
                 <Boardtable>
                     <div id="board-list">
-                        <thead>
-                            <tr>
+                        <table>
+                            <tr className="head">
                                 <th scople="col" className="seq">
                                     글번호
                                 </th>
                                 <th scople="col" className="title">
                                     제목
                                 </th>
-                                <th scople="col" className="content">
+                                {/* <th scople="col" className="content">
                                     내용
-                                </th>
+                                </th> */}
                                 <th scople="col" className="writtentime">
                                     작성일자
                                 </th>
@@ -85,8 +84,8 @@ export default function BoardScreen() {
                                     조회수
                                 </th>
                             </tr>
-                        </thead>
-                        <tbody>{boards && boards.map((board) => <BoardRep board={board}></BoardRep>)}</tbody>
+                            {boards && boards.map((board) => <BoardRep board={board}></BoardRep>)}
+                        </table>
                     </div>
                 </Boardtable>
             </Container>
