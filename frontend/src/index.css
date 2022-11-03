@@ -204,6 +204,7 @@ ul {
     align-items: center;
     bottom: 0;
     margin-top: 3vw;
+    /* width: 100vw; */
 }
 .footer p {
     display: flex;

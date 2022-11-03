@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import IMG from "../images/snoopy.png";
+import IMG from "../images/compare.jpg";
 import IMG2 from "../images/treetexture.png";
 import BG from "../images/coffeebenner.jpg";
 
@@ -11,7 +11,7 @@ const Container = styled.div`
     width: 100%;
     background-color: grey;
     /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
-    background-image: url(${BG});
+    background-image: url(${IMG});
     background-blend-mode: soft-light, screen;
     background-repeat: no-repeat;
     background-size: cover;

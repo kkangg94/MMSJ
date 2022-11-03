@@ -15,7 +15,6 @@ const productEvent = () => {
             <Blank />
             <EventrBenner />
             <EventDetail />
-            <Footer />
         </>
     );
 };
